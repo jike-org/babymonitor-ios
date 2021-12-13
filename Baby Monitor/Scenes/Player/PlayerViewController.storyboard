@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PlayerViewController" id="Y6W-OH-hqX" customClass="PlayerViewController" customModule="Baby_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="RSW-Dr-CKh">
+                                <rect key="frame" x="17" y="64" width="380" height="52"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uy8-Du-SOa">
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                                        <state key="normal" image="closeBtn"/>
+                                        <connections>
+                                            <action selector="dissmissScreen" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hjX-xW-1Qo"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="tZz-5q-vj4">
+                                        <rect key="frame" x="65" y="0.0" width="120" height="52"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-ha-Ljt">
+                                        <rect key="frame" x="198" y="0.0" width="52" height="52"/>
+                                        <state key="normal" image="brightDisableBtn"/>
+                                        <state key="selected" image="brightnesActiveBtn"/>
+                                        <connections>
+                                            <action selector="brightnessPressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yn4-XT-RBF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrB-9N-fHl">
+                                        <rect key="frame" x="263" y="0.0" width="52" height="52"/>
+                                        <state key="normal" image="videoDisableBtn"/>
+                                        <state key="selected" image="videoActiveBtn"/>
+                                        <connections>
+                                            <action selector="videoPressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3hl-jG-R4P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YJ-xx-idx">
+                                        <rect key="frame" x="328" y="0.0" width="52" height="52"/>
+                                        <state key="normal" image="voiceDisableBtn"/>
+                                        <state key="selected" image="voiceActiveBtn"/>
+                                        <connections>
+                                            <action selector="audioPressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="U9A-dT-j6O"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Dho-XB-A60">
+                                <rect key="frame" x="42" y="569" width="330" height="223"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet Dreams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yK-oe-ueL">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ucn-Sz-YSU">
+                                        <rect key="frame" x="0.0" y="60" width="330" height="103"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rA1-P3-ycG">
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="103"/>
+                                                <state key="normal" image="previousTrackBtn"/>
+                                                <connections>
+                                                    <action selector="playPreviousTrack" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HEx-h3-Wef"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-Kv-ZlB">
+                                                <rect key="frame" x="42" y="0.0" width="245" height="103"/>
+                                                <state key="normal" image="playActiveBtn"/>
+                                                <state key="selected" image="playNotActiveBtn"/>
+                                                <connections>
+                                                    <action selector="playPausePressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aUa-sB-3Ig"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utm-Pg-OtE">
+                                                <rect key="frame" x="307" y="0.0" width="23" height="103"/>
+                                                <state key="normal" image="nextTrackBtn"/>
+                                                <connections>
+                                                    <action selector="playNextTrack" destination="Y6W-OH-hqX" eventType="touchUpInside" id="b8X-ig-IB5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7SF-CA-Bjo" customClass="CustomSlider" customModule="Baby_Monitor" customModuleProvider="target">
+                                        <rect key="frame" x="-2" y="193" width="334" height="31"/>
+                                        <color key="minimumTrackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="changeVolume:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oAL-4l-JMc"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="yST-lr-UJg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Dho-XB-A60" secondAttribute="bottom" constant="70" id="3gK-pV-x2E"/>
+                            <constraint firstItem="RSW-Dr-CKh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="6jf-fM-BkJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RSW-Dr-CKh" secondAttribute="trailing" constant="17" id="CP2-q8-vbl"/>
+                            <constraint firstItem="RSW-Dr-CKh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="17" id="Vyx-iD-tvE"/>
+                            <constraint firstItem="Dho-XB-A60" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZIg-zJ-pja"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioBtn" destination="2YJ-xx-idx" id="lIf-sl-vYh"/>
+                        <outlet property="brightnessBtn" destination="cpX-ha-Ljt" id="B2Q-rV-EWU"/>
+                        <outlet property="playPauseBtn" destination="WiO-Kv-ZlB" id="ZcY-vX-gZl"/>
+                        <outlet property="videoBtn" destination="xrB-9N-fHl" id="dqb-bP-kw0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="76.339285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="brightDisableBtn" width="52" height="52"/>
+        <image name="brightnesActiveBtn" width="52" height="52"/>
+        <image name="closeBtn" width="52" height="52"/>
+        <image name="nextTrackBtn" width="23" height="27"/>
+        <image name="playActiveBtn" width="102" height="103"/>
+        <image name="playNotActiveBtn" width="102" height="102"/>
+        <image name="previousTrackBtn" width="22" height="27"/>
+        <image name="videoActiveBtn" width="52" height="52"/>
+        <image name="videoDisableBtn" width="52" height="52"/>
+        <image name="voiceActiveBtn" width="52" height="52"/>
+        <image name="voiceDisableBtn" width="52" height="52"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

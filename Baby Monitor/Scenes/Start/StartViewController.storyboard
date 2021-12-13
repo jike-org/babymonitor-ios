@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="Y6W-OH-hqX" customClass="StartViewController" customModule="Baby_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby Monitor DINO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7T-8v-YzG">
+                                <rect key="frame" x="46.5" y="40" width="227" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="Ple-x5-ILK">
+                                <rect key="frame" x="18" y="144" width="284" height="305"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who the account is for?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwS-C5-Xui">
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="U2H-Yk-XaZ">
+                                        <rect key="frame" x="0.0" y="83" width="284" height="222"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0J-NI-kYi">
+                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="222"/>
+                                                <state key="normal" image="babyUnitDeselected"/>
+                                                <state key="selected" image="babyUnitSelected"/>
+                                                <state key="highlighted" image="babyUnitSelected"/>
+                                                <connections>
+                                                    <action selector="toBabyUnit" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c5a-qC-PIL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pb-Qj-RHI">
+                                                <rect key="frame" x="149.5" y="0.0" width="134.5" height="222"/>
+                                                <state key="normal" image="parentBtn"/>
+                                                <state key="selected" image="parentUnitSelcted"/>
+                                                <state key="highlighted" image="parentUnitSelcted"/>
+                                                <connections>
+                                                    <action selector="toParentUnit" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3G4-q1-gCZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iL-fo-mFx">
+                                <rect key="frame" x="281" y="40" width="19" height="22"/>
+                                <state key="normal" image="ShareButton"/>
+                                <connections>
+                                    <action selector="shareApp" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hV8-eY-1u2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="Ple-x5-ILK" firstAttribute="top" secondItem="i7T-8v-YzG" secondAttribute="bottom" constant="75" id="876-GJ-2P0"/>
+                            <constraint firstItem="0iL-fo-mFx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="8oH-hV-PHO"/>
+                            <constraint firstItem="i7T-8v-YzG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="GQP-TG-k8G"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ple-x5-ILK" secondAttribute="trailing" constant="18" id="LwR-SV-v5K"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0iL-fo-mFx" secondAttribute="trailing" constant="20" id="eKL-62-hZp"/>
+                            <constraint firstItem="Ple-x5-ILK" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="18" id="f0P-zj-sVc"/>
+                            <constraint firstItem="i7T-8v-YzG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="quV-ps-wKl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="babyBtn" destination="j0J-NI-kYi" id="yDd-oW-6RT"/>
+                        <outlet property="chooseAccount" destination="WwS-C5-Xui" id="rUj-t0-xbK"/>
+                        <outlet property="firstTitle" destination="i7T-8v-YzG" id="5u7-uu-iiw"/>
+                        <outlet property="parentBtn" destination="4pb-Qj-RHI" id="bRN-Za-bD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14" y="77"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ShareButton" width="19" height="19"/>
+        <image name="babyUnitDeselected" width="162" height="222"/>
+        <image name="babyUnitSelected" width="162" height="222"/>
+        <image name="parentBtn" width="162" height="222"/>
+        <image name="parentUnitSelcted" width="162" height="222"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

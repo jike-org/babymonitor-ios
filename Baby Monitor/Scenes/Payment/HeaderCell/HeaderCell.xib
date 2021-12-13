@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="270" id="KGk-i7-Jjw" customClass="HeaderCell" customModule="Baby_Monitor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="270"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="34Z-Jd-nPm">
+                        <rect key="frame" x="24" y="15" width="303" height="175"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O9N-kD-gNW">
+                                <rect key="frame" x="135" y="0.0" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="5rg-np-wcY"/>
+                                    <constraint firstAttribute="height" constant="33" id="Icl-Yn-59d"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="The trial time expires in: 00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAf-6d-MhX">
+                                <rect key="frame" x="9.5" y="43" width="284" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="0.42745098039215684" green="0.41176470588235292" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xB-zI-U0f">
+                                <rect key="frame" x="0.5" y="74.5" width="302" height="100.5"/>
+                                <string key="text">Baby Monitor DINO offers you access to all functions via a
+Premium Account. You can buy weekly, monthly or yearly
+subscription with a FREE TRIAL PERIOD. The functions are the
+same but the choice is yours.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose your subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXy-YZ-JcR">
+                        <rect key="frame" x="65.5" y="218" width="220.5" height="31"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HXy-YZ-JcR" firstAttribute="top" secondItem="34Z-Jd-nPm" secondAttribute="bottom" constant="28" id="CoC-ec-8lP"/>
+                    <constraint firstItem="HXy-YZ-JcR" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="UJL-jb-g5X"/>
+                    <constraint firstAttribute="trailing" secondItem="34Z-Jd-nPm" secondAttribute="trailing" constant="24" id="YRa-vD-qat"/>
+                    <constraint firstAttribute="bottom" secondItem="HXy-YZ-JcR" secondAttribute="bottom" constant="21" id="k3u-tA-wpA"/>
+                    <constraint firstItem="34Z-Jd-nPm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="kV4-d2-aQ0"/>
+                    <constraint firstItem="34Z-Jd-nPm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="st4-D7-Dj0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="timerLabel" destination="OAf-6d-MhX" id="kXN-dF-GR9"/>
+            </connections>
+            <point key="canvasLocation" x="35.507246376811594" y="167.41071428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="timerIcon" width="35" height="33"/>
+    </resources>
+</document>

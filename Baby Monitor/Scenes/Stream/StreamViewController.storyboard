@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stream View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StreamViewController" id="Y6W-OH-hqX" customClass="StreamViewController" customModule="Baby_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4h-AY-59n">
+                                <rect key="frame" x="58" y="652" width="80" height="80"/>
+                                <state key="normal" image="FlipCameraButton"/>
+                                <connections>
+                                    <action selector="flipCamera" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JJp-28-tOI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXn-rn-0No">
+                                <rect key="frame" x="276" y="652" width="80" height="80"/>
+                                <state key="normal" image="ClosedCameraButton"/>
+                                <connections>
+                                    <action selector="dismissScene" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VN1-IQ-8Pa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OXn-rn-0No" secondAttribute="bottom" constant="130" id="7Aw-ze-lKI"/>
+                            <constraint firstItem="p4h-AY-59n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="58" id="Xb3-tn-rDT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="p4h-AY-59n" secondAttribute="bottom" constant="130" id="eaE-5p-FSq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OXn-rn-0No" secondAttribute="trailing" constant="58" id="wou-t7-Psk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14" y="73"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ClosedCameraButton" width="80" height="80"/>
+        <image name="FlipCameraButton" width="80" height="80"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
