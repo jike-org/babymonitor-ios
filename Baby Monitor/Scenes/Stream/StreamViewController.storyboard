@@ -31,16 +31,46 @@
                                     <action selector="dismissScene" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VN1-IQ-8Pa"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="To4-cU-l2y">
+                                <rect key="frame" x="197" y="133.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waitinf for parent unit connection..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1g-gX-b5d">
+                                <rect key="frame" x="79.5" y="94" width="255.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEg-t1-kLm" customClass="PurpleBtn" customModule="Baby_Monitor" customModuleProvider="target">
+                                <rect key="frame" x="122" y="423" width="170" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="M7K-uf-JXc"/>
+                                    <constraint firstAttribute="width" constant="170" id="ZXh-Cr-WL1"/>
+                                </constraints>
+                                <state key="normal" title="Connection info"/>
+                                <connections>
+                                    <action selector="showConnectionInfo" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ojh-fP-Idh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="To4-cU-l2y" firstAttribute="top" secondItem="A1g-gX-b5d" secondAttribute="bottom" constant="20" id="418-r0-x09"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OXn-rn-0No" secondAttribute="bottom" constant="130" id="7Aw-ze-lKI"/>
+                            <constraint firstItem="A1g-gX-b5d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="E5Y-Vq-u4F"/>
+                            <constraint firstItem="wEg-t1-kLm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FJB-Vb-B29"/>
+                            <constraint firstItem="To4-cU-l2y" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="GhG-CX-xYW"/>
                             <constraint firstItem="p4h-AY-59n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="58" id="Xb3-tn-rDT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="p4h-AY-59n" secondAttribute="bottom" constant="130" id="eaE-5p-FSq"/>
+                            <constraint firstItem="wEg-t1-kLm" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="id1-DL-Wfw"/>
+                            <constraint firstItem="A1g-gX-b5d" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jhH-Pz-otO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OXn-rn-0No" secondAttribute="trailing" constant="58" id="wou-t7-Psk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="To4-cU-l2y" id="B33-5g-RsC"/>
+                        <outlet property="infoLabel" destination="A1g-gX-b5d" id="au2-d5-2HG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

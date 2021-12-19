@@ -9,13 +9,13 @@
 import UIKit
 
 protocol PlayerRoutingLogic {
-
+    
 }
 
 class PlayerRouter: NSObject, PlayerRoutingLogic {
-
-  weak var viewController: PlayerViewController?
-  
-  // MARK: Routing
-  
+    
+    weak var viewController: PlayerViewController?
+    
+    // MARK: Routing
+    
 }

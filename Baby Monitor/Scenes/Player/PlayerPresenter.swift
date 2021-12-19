@@ -9,14 +9,13 @@
 import UIKit
 
 protocol PlayerPresentationLogic {
-  func presentData(response: Player.Model.Response.ResponseType)
+    func presentData(response: Player.Model.Response.ResponseType)
 }
 
 class PlayerPresenter: PlayerPresentationLogic {
-  weak var viewController: PlayerDisplayLogic?
-  
-  func presentData(response: Player.Model.Response.ResponseType) {
-  
-  }
-  
+    weak var viewController: PlayerDisplayLogic?
+    
+    func presentData(response: Player.Model.Response.ResponseType) {
+    }
+    
 }

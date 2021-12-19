@@ -9,18 +9,20 @@
 import UIKit
 
 protocol PlayerBusinessLogic {
-  func makeRequest(request: Player.Model.Request.RequestType)
+    func makeRequest(request: Player.Model.Request.RequestType)
 }
 
 class PlayerInteractor: PlayerBusinessLogic {
-
-  var presenter: PlayerPresentationLogic?
-  var service: PlayerService?
-  
-  func makeRequest(request: Player.Model.Request.RequestType) {
-    if service == nil {
-      service = PlayerService()
+    
+    var presenter: PlayerPresentationLogic?
+    var service: PlayerService?
+    
+    func makeRequest(request: Player.Model.Request.RequestType) {
+        if service == nil {
+            service = PlayerService()
+        }
+        
+        
     }
-  }
-  
+    
 }

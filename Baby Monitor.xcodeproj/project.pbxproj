@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -64,6 +64,8 @@
 		E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475627675A5E00ACE00C /* CustomSlider.swift */; };
 		E133475A27675F2D00ACE00C /* LegalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475927675F2D00ACE00C /* LegalsViewController.swift */; };
 		E133475D27675F7900ACE00C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475C27675F7900ACE00C /* Constraint.swift */; };
+		E184906E276F328200530B57 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = E184906D276F328200530B57 /* AgoraRtcKit */; };
+		E1849070276F672600530B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184906F276F672600530B57 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,7 @@
 		E133475627675A5E00ACE00C /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		E133475927675F2D00ACE00C /* LegalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalsViewController.swift; sourceTree = "<group>"; };
 		E133475C27675F7900ACE00C /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		E184906F276F672600530B57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E184906E276F328200530B57 /* AgoraRtcKit in Frameworks */,
 				E106FC9F275A7F4600022C11 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +211,7 @@
 				E106FC4E275A160B00022C11 /* LaunchScreen.storyboard */,
 				E106FC43275A160900022C11 /* AppDelegate.swift */,
 				E106FC45275A160900022C11 /* SceneDelegate.swift */,
+				E184906F276F672600530B57 /* Constants.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -397,6 +402,9 @@
 			dependencies = (
 			);
 			name = "Baby Monitor";
+			packageProductDependencies = (
+				E184906D276F328200530B57 /* AgoraRtcKit */,
+			);
 			productName = "Baby Monitor";
 			productReference = E106FC40275A160900022C11 /* Baby Monitor.app */;
 			productType = "com.apple.product-type.application";
@@ -424,6 +432,9 @@
 				Base,
 			);
 			mainGroup = E106FC37275A160900022C11;
+			packageReferences = (
+				E184906C276F328200530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+			);
 			productRefGroup = E106FC41275A160900022C11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -482,6 +493,7 @@
 				E106FCB2275A86CA00022C11 /* PaymentAssembly.swift in Sources */,
 				E1334744276743FC00ACE00C /* AdviceModels.swift in Sources */,
 				E106FC75275A1CD300022C11 /* PurpleBtn.swift in Sources */,
+				E1849070276F672600530B57 /* Constants.swift in Sources */,
 				E133475D27675F7900ACE00C /* Constraint.swift in Sources */,
 				E106FC69275A175B00022C11 /* StartViewController.swift in Sources */,
 				E106FC94275A750D00022C11 /* StreamModels.swift in Sources */,
@@ -707,6 +719,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E184906C276F328200530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E184906D276F328200530B57 /* AgoraRtcKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E184906C276F328200530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AgoraRtcKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E106FC38275A160900022C11 /* Project object */;
 }

@@ -9,14 +9,13 @@
 import UIKit
 
 protocol StreamPresentationLogic {
-  func presentData(response: Stream.Model.Response.ResponseType)
+    func presentData(response: Stream.Model.Response.ResponseType)
 }
 
 class StreamPresenter: StreamPresentationLogic {
-  weak var viewController: StreamDisplayLogic?
-  
-  func presentData(response: Stream.Model.Response.ResponseType) {
-  
-  }
-  
+    weak var viewController: StreamDisplayLogic?
+    
+    func presentData(response: Stream.Model.Response.ResponseType) {
+    }
+    
 }
