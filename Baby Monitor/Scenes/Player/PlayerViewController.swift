@@ -26,6 +26,7 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     @IBOutlet private weak var videoBtn: UIButton!
     @IBOutlet private weak var audioBtn: UIButton!
     @IBOutlet private weak var playPauseBtn: UIButton!
+    @IBOutlet private weak var brightnessSlider: UISlider!
     
     // MARK: View lifecycle
     
@@ -33,10 +34,6 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
         super.viewDidLoad()
         
         view.backgroundColor = .beige
-        
-//        AVCaptureDevice.requestAccess(for: .video) { isGranted in
-//            print(isGranted)
-//        }
         
         remoteView = UIView()
         view.insertSubview(remoteView, at: 0)
@@ -46,6 +43,9 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.showJoinAlert()
         }
+        
+        brightnessSlider.isHidden = true
+        brightnessSlider.minimumValue = 0.1
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,15 +66,14 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     
     private func showJoinAlert() {
         let alert = UIAlertController(title: "Connect to session", message: "Enter channel ID for connection to baby unit session", preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.text = ""
-        }
+        alert.addTextField()
         
         let action = UIAlertAction(title: "Connect", style: .default) { [weak alert, weak self] _ in
             guard
                 let text = alert?.textFields![0].text,
                 let self = self
             else { return }
+            
             self.joinAgoraChannel(channelID: text)
         }
         
@@ -87,6 +86,11 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
         
         agoraKit?.enableVideo()
         agoraKit?.enableAudio()
+        
+        let myLet = UnsafeMutablePointer<Int>.allocate(capacity: 1)
+        myLet.initialize(to: 1)
+        let config = AgoraDataStreamConfig()
+        agoraKit?.createDataStream(myLet, config: config)
         
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = 0
@@ -112,32 +116,67 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     
     @IBAction private func brightnessPressed() {
         brightnessBtn.isSelected.toggle()
+        brightnessSlider.isHidden.toggle()
     }
     
     @IBAction private func videoPressed() {
+        if videoBtn.isSelected {
+            agoraKit?.disableVideo()
+        } else {
+            agoraKit?.enableVideo()
+        }
         videoBtn.isSelected.toggle()
+        
+        let value = Commands.setVideoDisable(value: videoBtn.isSelected).description
+        let data = Data(value.utf8)
+        agoraKit?.sendStreamMessage(1, data: data)
     }
     
     @IBAction private func audioPressed() {
+        if audioBtn.isSelected {
+            agoraKit?.disableAudio()
+        } else {
+            agoraKit?.enableAudio()
+        }
         audioBtn.isSelected.toggle()
     }
     
     @IBAction private func playPausePressed() {
+        if playPauseBtn.isSelected {
+            let value = Commands.startSound.description
+            let data = Data(value.utf8)
+            agoraKit?.sendStreamMessage(1, data: data)
+        } else {
+            let value = Commands.pauseSound.description
+            let data = Data(value.utf8)
+            agoraKit?.sendStreamMessage(1, data: data)
+        }
         playPauseBtn.isSelected.toggle()
     }
     
     @IBAction private func playPreviousTrack() {
-        
+        let value = Commands.previousTrack.description
+        let data = Data(value.utf8)
+        agoraKit?.sendStreamMessage(1, data: data)
     }
     
     @IBAction private func playNextTrack() {
-        
+        let value = Commands.nextTrack.description
+        let data = Data(value.utf8)
+        agoraKit?.sendStreamMessage(1, data: data)
     }
     
     @IBAction private func changeVolume(_ sender: UISlider) {
-        
+        let value = Commands.changeSound(value: sender.value).description
+        let data = Data(value.utf8)
+        agoraKit?.sendStreamMessage(1, data: data)
     }
     
+    @IBAction private func changeBrightness(_ sender: UISlider) {
+        let value = Commands.changeBrightness(value: sender.value).description
+        let data = Data(value.utf8)
+        agoraKit?.sendStreamMessage(1, data: data)
+    }
     
 }
 

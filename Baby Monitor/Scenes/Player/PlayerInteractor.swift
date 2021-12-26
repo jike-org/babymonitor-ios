@@ -21,8 +21,6 @@ class PlayerInteractor: PlayerBusinessLogic {
         if service == nil {
             service = PlayerService()
         }
-        
-        
     }
     
 }

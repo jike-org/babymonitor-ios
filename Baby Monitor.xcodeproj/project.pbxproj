@@ -64,8 +64,16 @@
 		E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475627675A5E00ACE00C /* CustomSlider.swift */; };
 		E133475A27675F2D00ACE00C /* LegalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475927675F2D00ACE00C /* LegalsViewController.swift */; };
 		E133475D27675F7900ACE00C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475C27675F7900ACE00C /* Constraint.swift */; };
-		E184906E276F328200530B57 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = E184906D276F328200530B57 /* AgoraRtcKit */; };
+		E16C0161277866D600B5F75D /* Drops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015A277866D500B5F75D /* Drops.mp3 */; };
+		E16C0162277866D600B5F75D /* WhiteNoise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015B277866D500B5F75D /* WhiteNoise.mp3 */; };
+		E16C0163277866D600B5F75D /* WaterInCave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015C277866D500B5F75D /* WaterInCave.mp3 */; };
+		E16C0164277866D600B5F75D /* Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015D277866D500B5F75D /* Forest.mp3 */; };
+		E16C0165277866D600B5F75D /* Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015E277866D600B5F75D /* Waves.mp3 */; };
+		E16C0166277866D600B5F75D /* Fireplace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015F277866D600B5F75D /* Fireplace.mp3 */; };
+		E16C0167277866D600B5F75D /* RainAndThunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C0160277866D600B5F75D /* RainAndThunder.mp3 */; };
 		E1849070276F672600530B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184906F276F672600530B57 /* Constants.swift */; };
+		E18490732770736E00530B57 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = E18490722770736E00530B57 /* AgoraRtcKit */; };
+		E1AA3D24277608B00053338B /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA3D23277608B00053338B /* Commands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,7 +136,15 @@
 		E133475627675A5E00ACE00C /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		E133475927675F2D00ACE00C /* LegalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalsViewController.swift; sourceTree = "<group>"; };
 		E133475C27675F7900ACE00C /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		E16C015A277866D500B5F75D /* Drops.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Drops.mp3; sourceTree = "<group>"; };
+		E16C015B277866D500B5F75D /* WhiteNoise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WhiteNoise.mp3; sourceTree = "<group>"; };
+		E16C015C277866D500B5F75D /* WaterInCave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WaterInCave.mp3; sourceTree = "<group>"; };
+		E16C015D277866D500B5F75D /* Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Forest.mp3; sourceTree = "<group>"; };
+		E16C015E277866D600B5F75D /* Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Waves.mp3; sourceTree = "<group>"; };
+		E16C015F277866D600B5F75D /* Fireplace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireplace.mp3; sourceTree = "<group>"; };
+		E16C0160277866D600B5F75D /* RainAndThunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RainAndThunder.mp3; sourceTree = "<group>"; };
 		E184906F276F672600530B57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1AA3D23277608B00053338B /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E184906E276F328200530B57 /* AgoraRtcKit in Frameworks */,
+				E18490732770736E00530B57 /* AgoraRtcKit in Frameworks */,
 				E106FC9F275A7F4600022C11 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +235,7 @@
 		E106FC5B275A163C00022C11 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E16C0159277865AF00B5F75D /* Audio */,
 				E106FC4C275A160B00022C11 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -382,8 +399,23 @@
 			isa = PBXGroup;
 			children = (
 				E133475C27675F7900ACE00C /* Constraint.swift */,
+				E1AA3D23277608B00053338B /* Commands.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E16C0159277865AF00B5F75D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				E16C015B277866D500B5F75D /* WhiteNoise.mp3 */,
+				E16C015E277866D600B5F75D /* Waves.mp3 */,
+				E16C0160277866D600B5F75D /* RainAndThunder.mp3 */,
+				E16C015A277866D500B5F75D /* Drops.mp3 */,
+				E16C015F277866D600B5F75D /* Fireplace.mp3 */,
+				E16C015D277866D500B5F75D /* Forest.mp3 */,
+				E16C015C277866D500B5F75D /* WaterInCave.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,7 +435,7 @@
 			);
 			name = "Baby Monitor";
 			packageProductDependencies = (
-				E184906D276F328200530B57 /* AgoraRtcKit */,
+				E18490722770736E00530B57 /* AgoraRtcKit */,
 			);
 			productName = "Baby Monitor";
 			productReference = E106FC40275A160900022C11 /* Baby Monitor.app */;
@@ -433,7 +465,7 @@
 			);
 			mainGroup = E106FC37275A160900022C11;
 			packageReferences = (
-				E184906C276F328200530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				E18490712770736E00530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 			);
 			productRefGroup = E106FC41275A160900022C11 /* Products */;
 			projectDirPath = "";
@@ -449,16 +481,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16C0165277866D600B5F75D /* Waves.mp3 in Resources */,
 				E133475527674CA700ACE00C /* HeaderCell.xib in Resources */,
 				E106FC50275A160B00022C11 /* LaunchScreen.storyboard in Resources */,
+				E16C0167277866D600B5F75D /* RainAndThunder.mp3 in Resources */,
 				E13347492767440A00ACE00C /* AdviceViewController.storyboard in Resources */,
 				E13347512767449B00ACE00C /* PaymentFooterCell.xib in Resources */,
 				E106FCB7275A87A100022C11 /* PaymentCell.xib in Resources */,
 				E106FC4D275A160B00022C11 /* Assets.xcassets in Resources */,
 				E106FC86275A26C900022C11 /* PlayerViewController.storyboard in Resources */,
+				E16C0161277866D600B5F75D /* Drops.mp3 in Resources */,
 				E106FC99275A751D00022C11 /* StreamViewController.storyboard in Resources */,
+				E16C0163277866D600B5F75D /* WaterInCave.mp3 in Resources */,
 				E106FCB0275A868400022C11 /* PaymentViewcontroller.storyboard in Resources */,
 				E106FC6D275A176A00022C11 /* StartViewController.storyboard in Resources */,
+				E16C0166277866D600B5F75D /* Fireplace.mp3 in Resources */,
+				E16C0162277866D600B5F75D /* WhiteNoise.mp3 in Resources */,
+				E16C0164277866D600B5F75D /* Forest.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +551,7 @@
 				E106FC80275A26BB00022C11 /* PlayerRouter.swift in Sources */,
 				E13347382767426300ACE00C /* Menu.swift in Sources */,
 				E106FCA8275A867500022C11 /* PaymentPresenter.swift in Sources */,
+				E1AA3D24277608B00053338B /* Commands.swift in Sources */,
 				E106FC91275A750D00022C11 /* StreamPresenter.swift in Sources */,
 				E133475427674CA700ACE00C /* HeaderCell.swift in Sources */,
 				E133474B2767441500ACE00C /* AdviceAsembly.swift in Sources */,
@@ -656,7 +696,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -664,7 +704,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -680,7 +720,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -688,7 +728,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -721,20 +761,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E184906C276F328200530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+		E18490712770736E00530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.0;
+				kind = exactVersion;
+				version = 3.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E184906D276F328200530B57 /* AgoraRtcKit */ = {
+		E18490722770736E00530B57 /* AgoraRtcKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E184906C276F328200530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			package = E18490712770736E00530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
 			productName = AgoraRtcKit;
 		};
 /* End XCSwiftPackageProductDependency section */

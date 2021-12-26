@@ -25,8 +25,12 @@
 		<string>_service._tcp</string>
 		<string>_service._udp</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Need camera</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Need usage </string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Need microphone</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -65,9 +69,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Need microphone</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Need camera</string>
 </dict>
 </plist>

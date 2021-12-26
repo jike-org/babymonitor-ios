@@ -9,7 +9,7 @@ import Foundation
 
 class Constants {
     
-    static let token = "006529a286fa7064f2f95e4f6283d116a71IABNi38ueGtn6UXDCG4nDwBzMRgvrS6+yb2VgY6N9b3pmgx+f9gAAAAAEADfTJIXN1PAYQEAAQA3U8Bh"
+    static let token = "006529a286fa7064f2f95e4f6283d116a71IABcNUZaYgWNtmKBVL7yPWPD5E0j6Eako0TK6ya7e7RQfAx+f9gAAAAAEABGkIsgZ4TJYQEAAQBnhMlh"
     static let appID = "529a286fa7064f2f95e4f6283d116a71"
     
 }

@@ -39,7 +39,7 @@
                                             <action selector="brightnessPressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yn4-XT-RBF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrB-9N-fHl">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrB-9N-fHl">
                                         <rect key="frame" x="263" y="0.0" width="52" height="52"/>
                                         <state key="normal" image="videoDisableBtn"/>
                                         <state key="selected" image="videoActiveBtn"/>
@@ -47,7 +47,7 @@
                                             <action selector="videoPressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3hl-jG-R4P"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YJ-xx-idx">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YJ-xx-idx">
                                         <rect key="frame" x="328" y="0.0" width="52" height="52"/>
                                         <state key="normal" image="voiceDisableBtn"/>
                                         <state key="selected" image="voiceActiveBtn"/>
@@ -58,7 +58,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Dho-XB-A60">
-                                <rect key="frame" x="42" y="569" width="330" height="223"/>
+                                <rect key="frame" x="42" y="570" width="330" height="222"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet Dreams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yK-oe-ueL">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="30"/>
@@ -67,17 +67,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ucn-Sz-YSU">
-                                        <rect key="frame" x="0.0" y="60" width="330" height="103"/>
+                                        <rect key="frame" x="0.0" y="60" width="330" height="102"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rA1-P3-ycG">
-                                                <rect key="frame" x="0.0" y="0.0" width="22" height="103"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="102"/>
                                                 <state key="normal" image="previousTrackBtn"/>
                                                 <connections>
                                                     <action selector="playPreviousTrack" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HEx-h3-Wef"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-Kv-ZlB">
-                                                <rect key="frame" x="42" y="0.0" width="245" height="103"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-Kv-ZlB">
+                                                <rect key="frame" x="42" y="0.0" width="245" height="102"/>
                                                 <state key="normal" image="playActiveBtn"/>
                                                 <state key="selected" image="playNotActiveBtn"/>
                                                 <connections>
@@ -85,7 +85,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utm-Pg-OtE">
-                                                <rect key="frame" x="307" y="0.0" width="23" height="103"/>
+                                                <rect key="frame" x="307" y="0.0" width="23" height="102"/>
                                                 <state key="normal" image="nextTrackBtn"/>
                                                 <connections>
                                                     <action selector="playNextTrack" destination="Y6W-OH-hqX" eventType="touchUpInside" id="b8X-ig-IB5"/>
@@ -94,10 +94,10 @@
                                         </subviews>
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7SF-CA-Bjo" customClass="CustomSlider" customModule="Baby_Monitor" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="193" width="334" height="31"/>
+                                        <rect key="frame" x="-2" y="192" width="334" height="31"/>
                                         <color key="minimumTrackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <action selector="changeVolume:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oAL-4l-JMc"/>
+                                            <action selector="changeVolume:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aFh-H8-133"/>
                                         </connections>
                                     </slider>
                                 </subviews>
@@ -105,20 +105,34 @@
                                     <constraint firstAttribute="width" constant="330" id="yST-lr-UJg"/>
                                 </constraints>
                             </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="24q-RR-cEe">
+                                <rect key="frame" x="150" y="141" width="190" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="RtO-5v-09m"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeBrightness:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8Li-Ah-wYS"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Dho-XB-A60" secondAttribute="bottom" constant="70" id="3gK-pV-x2E"/>
                             <constraint firstItem="RSW-Dr-CKh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="6jf-fM-BkJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="24q-RR-cEe" secondAttribute="trailing" constant="76" id="8n1-Xe-vBN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RSW-Dr-CKh" secondAttribute="trailing" constant="17" id="CP2-q8-vbl"/>
                             <constraint firstItem="RSW-Dr-CKh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="17" id="Vyx-iD-tvE"/>
+                            <constraint firstItem="24q-RR-cEe" firstAttribute="top" secondItem="RSW-Dr-CKh" secondAttribute="bottom" constant="25" id="WS0-kK-07a"/>
                             <constraint firstItem="Dho-XB-A60" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZIg-zJ-pja"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="audioBtn" destination="2YJ-xx-idx" id="lIf-sl-vYh"/>
                         <outlet property="brightnessBtn" destination="cpX-ha-Ljt" id="B2Q-rV-EWU"/>
+                        <outlet property="brightnessSlider" destination="24q-RR-cEe" id="uo8-3a-ylR"/>
                         <outlet property="playPauseBtn" destination="WiO-Kv-ZlB" id="ZcY-vX-gZl"/>
                         <outlet property="videoBtn" destination="xrB-9N-fHl" id="dqb-bP-kw0"/>
                     </connections>
