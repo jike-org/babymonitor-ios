@@ -9,6 +9,7 @@ import UIKit
 
 protocol PaymentCellViewModel {
     var totalAmount: String  { get }
+    var priceDescription: String { get }
     var isSelected: Bool { get }
 }
 
@@ -18,7 +19,7 @@ class PaymentCell: UITableViewCell {
     
     @IBOutlet private weak var selectView: UIView!
     @IBOutlet private weak var totalAmount: UILabel!
-    @IBOutlet private weak var totalAmountTwo: UILabel!
+    @IBOutlet private weak var tariffDescription: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -32,13 +33,12 @@ class PaymentCell: UITableViewCell {
     
     func apply(viewModel: PaymentCellViewModel) {
         totalAmount.text = viewModel.totalAmount
-        totalAmountTwo.text = "Billed weekly: \(viewModel.totalAmount)"
-        
-
+        tariffDescription.text = viewModel.priceDescription
+        selectView.backgroundColor = viewModel.isSelected ? .mainWhite : .clear
     }
     
-    func toggleSelection() {
-        selectView.backgroundColor = isSelected ? .mainWhite : .clear
-    }
+//    func toggleSelection() {
+//        selectView.backgroundColor = isSelected ? .mainWhite : .clear
+//    }
     
 }

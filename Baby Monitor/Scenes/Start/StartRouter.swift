@@ -23,13 +23,13 @@ class StartRouter: NSObject, StartRoutingLogic {
     // MARK: Routing
     
     func navigateToPaymentScene() {
-        let storyboard = UIStoryboard(name: "PaymentViewcontroller", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "PaymentViewController") { coder in
-            let assembly = PaymentAssembly()
-            return assembly.assemble(coder: coder)
-        } as! PaymentViewController
-        vc.modalPresentationStyle = .fullScreen
-        viewController?.present(vc, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "PaymentViewcontroller", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "PaymentViewController") { coder in
+//            let assembly = PaymentAssembly()
+//            return assembly.assemble(coder: coder)
+//        } as! PaymentViewController
+//        vc.modalPresentationStyle = .fullScreen
+//        viewController?.present(vc, animated: true, completion: nil)
     }
     
     func navigateToBabyScene() {

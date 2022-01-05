@@ -34,12 +34,12 @@ class Menu: UITabBarController {
         return vc
     }
     
-    private func createMusicScreen() -> PlayerViewController {
-        let storyboard = UIStoryboard(name: "PlayerViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "PlayerViewController") { coder in
-            let assembly = PlayerAssembly()
+    private func createMusicScreen() -> AudioPlayerViewController {
+        let storyboard = UIStoryboard(name: "AudioPlayerViewController", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "AudioPlayerViewController") { coder in
+            let assembly = AudioPlayerAssembly()
             return assembly.assemble(coder: coder)
-        } as! PlayerViewController
+        } as! AudioPlayerViewController
         let item = UITabBarItem(title: "Music", image: #imageLiteral(resourceName: "musicIcon"), tag: 0)
         vc.tabBarItem = item
         return vc
@@ -57,11 +57,15 @@ class Menu: UITabBarController {
     }
     
     private func createSubscribtionScreen() -> PaymentViewController {
-        let storyboard = UIStoryboard(name: "PaymentViewcontroller", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "PaymentViewController") { coder in
-            let assembly = PaymentAssembly()
-            return assembly.assemble(coder: coder)
-        } as! PaymentViewController
+//        let storyboard = UIStoryboard(name: "PaymentViewcontroller", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "PaymentViewController") { coder in
+//            let assembly = PaymentAssembly()
+//            return assembly.assemble(coder: coder)
+//        } as! PaymentViewController
+        
+        let assembly = PaymentAssembly()
+        let vc = assembly.assemble()
+        
         let item = UITabBarItem(title: "Subscribe", image: #imageLiteral(resourceName: "paymentIcon"), tag: 0)
         vc.tabBarItem = item
         return vc

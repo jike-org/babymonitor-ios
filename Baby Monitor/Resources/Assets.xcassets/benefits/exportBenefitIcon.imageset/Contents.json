@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "exportBenefitIcon.png",
+      "filename" : "micro.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "micro-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "micro-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -32,4 +32,8 @@ class PaymentFooterCell: UITableViewCell {
         privacyPoliceCB?()
     }
     
+    @IBAction private func restore() {
+        IAPService.shared.restoreCompletedTransaction()
+    }
+    
 }

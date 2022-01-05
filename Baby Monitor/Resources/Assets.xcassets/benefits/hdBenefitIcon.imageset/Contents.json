@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "hdBenefitIcon.png",
+      "filename" : "camera.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "camera-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "camera-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 enum Payment {
     
@@ -14,18 +15,36 @@ enum Payment {
         struct Request {
             enum RequestType {
                 case checkTrialAvalabilty
+                case selectTariff(id: String)
             }
         }
         struct Response {
             enum ResponseType {
                 case presentTimer
+                case presentTariffs(tariffs: [SKProduct], selectedProduct: String?)
+                case presentSuccess
+                case presentFailed(error: Error)
+                case presentRestored
             }
         }
         struct ViewModel {
             enum ViewModelData {
                 case displayTimer(time: String)
+                case displatAlert(message: String)
+                case displayTariffs(viewModel: PaymentViewModel)
             }
         }
     }
     
+}
+
+struct PaymentViewModel {
+    struct Tariff: PaymentCellViewModel {
+        var totalAmount: String
+        var priceDescription: String
+        var isSelected: Bool
+        var tariffID: String
+    }
+    
+    let tariffs: [Tariff]
 }

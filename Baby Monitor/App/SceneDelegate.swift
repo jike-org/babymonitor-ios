@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Adapty
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -27,6 +28,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = Menu()
         window?.makeKeyAndVisible()
         window?.overrideUserInterfaceStyle = .light
+        
+        setupPurchases()
+    }
+    
+    private func setupPurchases() {
+        IAPService.shared.setupPurchases { isSuccess in
+            IAPService.shared.fetchProducts()
+        }
+        
+//        Adapty.getPaywalls { paywalls, products, error in
+//            print(paywalls?.count)
+////            print(products?.first?)
+//            print(error)
+//            guard let product = products?.first else { return }
+//            Adapty.makePurchase(product: product) { info, reciept, appleValidationResult, product, error in
+//                print(error)
+//            }
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

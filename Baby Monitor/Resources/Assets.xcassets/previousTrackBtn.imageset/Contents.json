@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "previousTrackButton.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "PreviousTrackButton-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

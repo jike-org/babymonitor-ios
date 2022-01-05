@@ -58,8 +58,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="selectView" destination="eJB-vD-xLi" id="ksl-YB-v0R"/>
+                <outlet property="tariffDescription" destination="MaZ-vF-fDW" id="4cv-BV-zPx"/>
                 <outlet property="totalAmount" destination="8Pw-LX-yDz" id="L5m-Dv-HGP"/>
-                <outlet property="totalAmountTwo" destination="MaZ-vF-fDW" id="kQo-Fw-3xJ"/>
             </connections>
             <point key="canvasLocation" x="68.115942028985515" y="119.86607142857142"/>
         </tableViewCell>

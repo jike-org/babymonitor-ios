@@ -265,6 +265,7 @@ extension StreamViewController: AgoraRtcEngineDelegate {
                                  startPos: 0)
         case .setVideoDisable(value: let value):
             saveBatteryStackView.isHidden = value
+            remoteView.isHidden = !value
         default:
             break
         }

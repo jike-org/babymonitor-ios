@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "book-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "bookdfdf.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

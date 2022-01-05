@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "CameraOnButton.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "CameraOnButton-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

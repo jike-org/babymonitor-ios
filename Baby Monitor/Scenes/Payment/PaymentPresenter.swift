@@ -7,19 +7,50 @@
 //
 
 import UIKit
+import StoreKit
 
 protocol PaymentPresentationLogic {
     func presentData(response: Payment.Model.Response.ResponseType)
 }
 
 class PaymentPresenter: PaymentPresentationLogic {
+    
     weak var viewController: PaymentDisplayLogic?
     
     func presentData(response: Payment.Model.Response.ResponseType) {
         switch response {
         case .presentTimer:
             startTimer(durationInSeconds: 10000)
+        case .presentTariffs(let tariffs, let selectedProduct):
+            let cells = tariffs.map { self.productToTariffViewModel($0, selectedProduct) }
+            let viewModel = PaymentViewModel.init(tariffs: cells)
+            viewController?.displayData(viewModel: .displayTariffs(viewModel: viewModel))
+        case .presentSuccess:
+            viewController?.displayData(viewModel: .displatAlert(message: "Thanks for payment!"))
+        case .presentFailed(error: let error):
+            viewController?.displayData(viewModel: .displatAlert(message: error.localizedDescription))
+        case .presentRestored:
+            viewController?.displayData(viewModel: .displatAlert(message: "Payment restored"))
         }
+    }
+    
+    private func productToTariffViewModel(_ product: SKProduct, _ selectedProduct: String?) -> PaymentViewModel.Tariff {
+//        let price = "$\(product.price.doubleValue / 100)" + "/ \(product.subscriptionPeriod?.description ?? "")"
+        
+        let price = priceStringFor(product: product)
+        let isSelected = product.productIdentifier == selectedProduct ?? ""
+        return PaymentViewModel.Tariff.init(totalAmount: price,
+                                            priceDescription: product.localizedTitle,
+                                            isSelected: isSelected,
+                                            tariffID: product.productIdentifier)
+    }
+    
+    private func priceStringFor(product: SKProduct) -> String {
+        let numFormatter = NumberFormatter()
+        numFormatter.numberStyle = .currency
+        numFormatter.locale = product.priceLocale
+        
+        return "\(numFormatter.string(from: product.price) ?? "")"
     }
     
     private func startTimer(durationInSeconds: Int) {

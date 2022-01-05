@@ -9,18 +9,21 @@ import Foundation
 
 class PaymentAssembly {
     
-    func assemble(coder: NSCoder) -> PaymentViewController? {
-        let vc = PaymentViewController(coder: coder)
+    func assemble() -> PaymentViewController {
+//        let vc = PaymentViewController(coder: coder)
+        let vc = PaymentViewController()
         let presenter = createPresenter()
         let interactor = createInteractor()
         let router = createRouter()
         
-        vc?.interactor = interactor
-        vc?.router = router
+        vc.interactor = interactor
+        vc.router = router
         
         interactor.presenter = presenter
         presenter.viewController = vc
         router.viewController = vc
+        
+        IAPService.shared.delegate = interactor
         
         return vc
     }

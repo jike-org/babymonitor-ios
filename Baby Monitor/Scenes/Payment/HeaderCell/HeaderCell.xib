@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="34Z-Jd-nPm">
-                        <rect key="frame" x="24" y="15" width="303" height="175"/>
+                        <rect key="frame" x="24" y="15" width="303" height="153.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O9N-kD-gNW">
                                 <rect key="frame" x="135" y="0.0" width="33" height="33"/>
@@ -34,12 +34,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xB-zI-U0f">
-                                <rect key="frame" x="0.5" y="74.5" width="302" height="100.5"/>
+                                <rect key="frame" x="2.5" y="74.5" width="298.5" height="79"/>
                                 <string key="text">Baby Monitor DINO offers you access to all functions via a
 Premium Account. You can buy weekly, monthly or yearly
 subscription with a FREE TRIAL PERIOD. The functions are the
 same but the choice is yours.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>

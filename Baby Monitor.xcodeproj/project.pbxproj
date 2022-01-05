@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10432542785822000E29E16 /* NotificationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10432532785822000E29E16 /* NotificationCenterService.swift */; };
+		E1043256278591DE00E29E16 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1043255278591DE00E29E16 /* UIViewController+Extension.swift */; };
+		E104325927859D2E00E29E16 /* Adapty in Frameworks */ = {isa = PBXBuildFile; productRef = E104325827859D2E00E29E16 /* Adapty */; };
 		E106FC44275A160900022C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106FC43275A160900022C11 /* AppDelegate.swift */; };
 		E106FC46275A160900022C11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106FC45275A160900022C11 /* SceneDelegate.swift */; };
 		E106FC4D275A160B00022C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E106FC4C275A160B00022C11 /* Assets.xcassets */; };
@@ -71,12 +74,25 @@
 		E16C0165277866D600B5F75D /* Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015E277866D600B5F75D /* Waves.mp3 */; };
 		E16C0166277866D600B5F75D /* Fireplace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015F277866D600B5F75D /* Fireplace.mp3 */; };
 		E16C0167277866D600B5F75D /* RainAndThunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C0160277866D600B5F75D /* RainAndThunder.mp3 */; };
+		E16C017D277B566100B5F75D /* AudioPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C0175277B566100B5F75D /* AudioPlayerPresenter.swift */; };
+		E16C017E277B566100B5F75D /* AudioPlayerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C0176277B566100B5F75D /* AudioPlayerWorker.swift */; };
+		E16C017F277B566100B5F75D /* AudioPlayerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C0177277B566100B5F75D /* AudioPlayerRouter.swift */; };
+		E16C0180277B566100B5F75D /* AudioPlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16C0178277B566100B5F75D /* AudioPlayerViewController.storyboard */; };
+		E16C0181277B566100B5F75D /* AudioPlayerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C0179277B566100B5F75D /* AudioPlayerModels.swift */; };
+		E16C0182277B566100B5F75D /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C017A277B566100B5F75D /* AudioPlayerViewController.swift */; };
+		E16C0183277B566100B5F75D /* AudioPlayerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C017B277B566100B5F75D /* AudioPlayerAssembly.swift */; };
+		E16C0184277B566100B5F75D /* AudioPlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C017C277B566100B5F75D /* AudioPlayerInteractor.swift */; };
+		E16C0186277D963200B5F75D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16C0185277D963200B5F75D /* StoreKit.framework */; };
+		E16C0189277D96E600B5F75D /* IAPProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C0188277D96E600B5F75D /* IAPProducts.swift */; };
+		E16C018B277D972E00B5F75D /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C018A277D972E00B5F75D /* IAPService.swift */; };
 		E1849070276F672600530B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184906F276F672600530B57 /* Constants.swift */; };
 		E18490732770736E00530B57 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = E18490722770736E00530B57 /* AgoraRtcKit */; };
 		E1AA3D24277608B00053338B /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA3D23277608B00053338B /* Commands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10432532785822000E29E16 /* NotificationCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterService.swift; sourceTree = "<group>"; };
+		E1043255278591DE00E29E16 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E106FC40275A160900022C11 /* Baby Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baby Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E106FC43275A160900022C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E106FC45275A160900022C11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +159,17 @@
 		E16C015E277866D600B5F75D /* Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Waves.mp3; sourceTree = "<group>"; };
 		E16C015F277866D600B5F75D /* Fireplace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireplace.mp3; sourceTree = "<group>"; };
 		E16C0160277866D600B5F75D /* RainAndThunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RainAndThunder.mp3; sourceTree = "<group>"; };
+		E16C0175277B566100B5F75D /* AudioPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerPresenter.swift; sourceTree = "<group>"; };
+		E16C0176277B566100B5F75D /* AudioPlayerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerWorker.swift; sourceTree = "<group>"; };
+		E16C0177277B566100B5F75D /* AudioPlayerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerRouter.swift; sourceTree = "<group>"; };
+		E16C0178277B566100B5F75D /* AudioPlayerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioPlayerViewController.storyboard; sourceTree = "<group>"; };
+		E16C0179277B566100B5F75D /* AudioPlayerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerModels.swift; sourceTree = "<group>"; };
+		E16C017A277B566100B5F75D /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		E16C017B277B566100B5F75D /* AudioPlayerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerAssembly.swift; sourceTree = "<group>"; };
+		E16C017C277B566100B5F75D /* AudioPlayerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerInteractor.swift; sourceTree = "<group>"; };
+		E16C0185277D963200B5F75D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E16C0188277D96E600B5F75D /* IAPProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProducts.swift; sourceTree = "<group>"; };
+		E16C018A277D972E00B5F75D /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		E184906F276F672600530B57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1AA3D23277608B00053338B /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +179,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16C0186277D963200B5F75D /* StoreKit.framework in Frameworks */,
+				E104325927859D2E00E29E16 /* Adapty in Frameworks */,
 				E18490732770736E00530B57 /* AgoraRtcKit in Frameworks */,
 				E106FC9F275A7F4600022C11 /* ExternalAccessory.framework in Frameworks */,
 			);
@@ -194,12 +223,13 @@
 		E106FC57275A161700022C11 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E16C0174277B565000B5F75D /* AudioPlayer */,
 				E133475827675F1400ACE00C /* Legals */,
 				E1334739276743E800ACE00C /* Advice */,
 				E13347362767423200ACE00C /* Menu */,
 				E106FCA0275A866300022C11 /* Payment */,
 				E106FC89275A74FD00022C11 /* Stream */,
-				E106FC76275A26AB00022C11 /* Player */,
+				E106FC76275A26AB00022C11 /* VideoPlayer */,
 				E106FC5D275A172F00022C11 /* Start */,
 			);
 			path = Scenes;
@@ -217,6 +247,8 @@
 		E106FC59275A162600022C11 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E16C0187277D96D200B5F75D /* Purchases */,
+				E10432532785822000E29E16 /* NotificationCenterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -268,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				E106FC71275A18F800022C11 /* UIColor+Extension.swift */,
+				E1043255278591DE00E29E16 /* UIViewController+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -281,7 +314,7 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		E106FC76275A26AB00022C11 /* Player */ = {
+		E106FC76275A26AB00022C11 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				E106FC77275A26BB00022C11 /* PlayerPresenter.swift */,
@@ -293,7 +326,7 @@
 				E106FC87275A698300022C11 /* PlayerAssembly.swift */,
 				E106FC85275A26C900022C11 /* PlayerViewController.storyboard */,
 			);
-			path = Player;
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		E106FC89275A74FD00022C11 /* Stream */ = {
@@ -314,6 +347,7 @@
 		E106FC9D275A7F4600022C11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E16C0185277D963200B5F75D /* StoreKit.framework */,
 				E106FC9E275A7F4600022C11 /* ExternalAccessory.framework */,
 			);
 			name = Frameworks;
@@ -418,6 +452,30 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		E16C0174277B565000B5F75D /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E16C0175277B566100B5F75D /* AudioPlayerPresenter.swift */,
+				E16C0176277B566100B5F75D /* AudioPlayerWorker.swift */,
+				E16C0177277B566100B5F75D /* AudioPlayerRouter.swift */,
+				E16C0178277B566100B5F75D /* AudioPlayerViewController.storyboard */,
+				E16C0179277B566100B5F75D /* AudioPlayerModels.swift */,
+				E16C017A277B566100B5F75D /* AudioPlayerViewController.swift */,
+				E16C017B277B566100B5F75D /* AudioPlayerAssembly.swift */,
+				E16C017C277B566100B5F75D /* AudioPlayerInteractor.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		E16C0187277D96D200B5F75D /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				E16C0188277D96E600B5F75D /* IAPProducts.swift */,
+				E16C018A277D972E00B5F75D /* IAPService.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -436,6 +494,7 @@
 			name = "Baby Monitor";
 			packageProductDependencies = (
 				E18490722770736E00530B57 /* AgoraRtcKit */,
+				E104325827859D2E00E29E16 /* Adapty */,
 			);
 			productName = "Baby Monitor";
 			productReference = E106FC40275A160900022C11 /* Baby Monitor.app */;
@@ -466,6 +525,7 @@
 			mainGroup = E106FC37275A160900022C11;
 			packageReferences = (
 				E18490712770736E00530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				E104325727859D2E00E29E16 /* XCRemoteSwiftPackageReference "AdaptySDK-iOS" */,
 			);
 			productRefGroup = E106FC41275A160900022C11 /* Products */;
 			projectDirPath = "";
@@ -486,6 +546,7 @@
 				E106FC50275A160B00022C11 /* LaunchScreen.storyboard in Resources */,
 				E16C0167277866D600B5F75D /* RainAndThunder.mp3 in Resources */,
 				E13347492767440A00ACE00C /* AdviceViewController.storyboard in Resources */,
+				E16C0180277B566100B5F75D /* AudioPlayerViewController.storyboard in Resources */,
 				E13347512767449B00ACE00C /* PaymentFooterCell.xib in Resources */,
 				E106FCB7275A87A100022C11 /* PaymentCell.xib in Resources */,
 				E106FC4D275A160B00022C11 /* Assets.xcassets in Resources */,
@@ -508,22 +569,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1043256278591DE00E29E16 /* UIViewController+Extension.swift in Sources */,
+				E16C017F277B566100B5F75D /* AudioPlayerRouter.swift in Sources */,
 				E106FC68275A175B00022C11 /* StartModels.swift in Sources */,
+				E16C0189277D96E600B5F75D /* IAPProducts.swift in Sources */,
 				E1334745276743FC00ACE00C /* AdviceViewController.swift in Sources */,
 				E106FCAA275A867500022C11 /* PaymentRouter.swift in Sources */,
+				E16C018B277D972E00B5F75D /* IAPService.swift in Sources */,
 				E106FC82275A26BB00022C11 /* PlayerViewController.swift in Sources */,
 				E106FC88275A698300022C11 /* PlayerAssembly.swift in Sources */,
+				E16C017E277B566100B5F75D /* AudioPlayerWorker.swift in Sources */,
 				E106FC7E275A26BB00022C11 /* PlayerPresenter.swift in Sources */,
 				E106FC6A275A175B00022C11 /* StartInteractor.swift in Sources */,
 				E1334743276743FC00ACE00C /* AdviceRouter.swift in Sources */,
 				E106FCB6275A87A100022C11 /* PaymentCell.swift in Sources */,
 				E106FC9B275A769900022C11 /* StreamAssembly.swift in Sources */,
+				E16C0184277B566100B5F75D /* AudioPlayerInteractor.swift in Sources */,
 				E106FCAC275A867500022C11 /* PaymentViewController.swift in Sources */,
 				E106FC81275A26BB00022C11 /* PlayerModels.swift in Sources */,
 				E1334741276743FC00ACE00C /* AdvicePresenter.swift in Sources */,
 				E106FC83275A26BB00022C11 /* PlayerInteractor.swift in Sources */,
 				E133475A27675F2D00ACE00C /* LegalsViewController.swift in Sources */,
 				E106FC7F275A26BB00022C11 /* PlayerWorker.swift in Sources */,
+				E10432542785822000E29E16 /* NotificationCenterService.swift in Sources */,
 				E106FC96275A750D00022C11 /* StreamInteractor.swift in Sources */,
 				E1334746276743FC00ACE00C /* AdviceInteractor.swift in Sources */,
 				E106FC95275A750D00022C11 /* StreamViewController.swift in Sources */,
@@ -532,11 +600,13 @@
 				E106FCB2275A86CA00022C11 /* PaymentAssembly.swift in Sources */,
 				E1334744276743FC00ACE00C /* AdviceModels.swift in Sources */,
 				E106FC75275A1CD300022C11 /* PurpleBtn.swift in Sources */,
+				E16C0182277B566100B5F75D /* AudioPlayerViewController.swift in Sources */,
 				E1849070276F672600530B57 /* Constants.swift in Sources */,
 				E133475D27675F7900ACE00C /* Constraint.swift in Sources */,
 				E106FC69275A175B00022C11 /* StartViewController.swift in Sources */,
 				E106FC94275A750D00022C11 /* StreamModels.swift in Sources */,
 				E106FC92275A750D00022C11 /* StreamWorker.swift in Sources */,
+				E16C017D277B566100B5F75D /* AudioPlayerPresenter.swift in Sources */,
 				E106FC67275A175B00022C11 /* StartRouter.swift in Sources */,
 				E106FC66275A175B00022C11 /* StartWorker.swift in Sources */,
 				E106FC44275A160900022C11 /* AppDelegate.swift in Sources */,
@@ -546,12 +616,14 @@
 				E106FCAD275A867500022C11 /* PaymentInteractor.swift in Sources */,
 				E106FC72275A18F800022C11 /* UIColor+Extension.swift in Sources */,
 				E106FCA9275A867500022C11 /* PaymentWorker.swift in Sources */,
+				E16C0181277B566100B5F75D /* AudioPlayerModels.swift in Sources */,
 				E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */,
 				E106FCAB275A867500022C11 /* PaymentModels.swift in Sources */,
 				E106FC80275A26BB00022C11 /* PlayerRouter.swift in Sources */,
 				E13347382767426300ACE00C /* Menu.swift in Sources */,
 				E106FCA8275A867500022C11 /* PaymentPresenter.swift in Sources */,
 				E1AA3D24277608B00053338B /* Commands.swift in Sources */,
+				E16C0183277B566100B5F75D /* AudioPlayerAssembly.swift in Sources */,
 				E106FC91275A750D00022C11 /* StreamPresenter.swift in Sources */,
 				E133475427674CA700ACE00C /* HeaderCell.swift in Sources */,
 				E133474B2767441500ACE00C /* AdviceAsembly.swift in Sources */,
@@ -696,7 +768,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -720,7 +792,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -761,6 +833,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E104325727859D2E00E29E16 /* XCRemoteSwiftPackageReference "AdaptySDK-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adaptyteam/AdaptySDK-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.9;
+			};
+		};
 		E18490712770736E00530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
@@ -772,6 +852,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E104325827859D2E00E29E16 /* Adapty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E104325727859D2E00E29E16 /* XCRemoteSwiftPackageReference "AdaptySDK-iOS" */;
+			productName = Adapty;
+		};
 		E18490722770736E00530B57 /* AgoraRtcKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E18490712770736E00530B57 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;

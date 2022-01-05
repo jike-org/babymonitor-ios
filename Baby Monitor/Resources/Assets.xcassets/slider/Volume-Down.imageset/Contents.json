@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "Volume-Down-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Volume-Down-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -19,8 +19,17 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     
     private var previousIndexPath: IndexPath!
     private var headerCell: HeaderCell?
+    private var viewModel = PaymentViewModel.init(tariffs: [])
     
-    @IBOutlet private weak var tableView: UITableView!
+    private var tableView: UITableView?
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: View lifecycle
     
@@ -30,34 +39,57 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
         setupTableView()
         
         view.backgroundColor = .lightPurple
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         interactor?.makeRequest(request: .checkTrialAvalabilty)
     }
     
     private func setupTableView() {
+        tableView = UITableView(frame: view.bounds, style: .grouped)
+        tableView?.separatorStyle = .none
+        view.addSubview(tableView!)
+        tableView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView!.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView!.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView!.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
         let nibCell = UINib(nibName: "PaymentCell", bundle: nil)
-        tableView.register(nibCell, forCellReuseIdentifier: PaymentCell.reuseID)
+        tableView?.register(nibCell, forCellReuseIdentifier: PaymentCell.reuseID)
         
         let headerNib = UINib(nibName: "HeaderCell", bundle: nil)
-        tableView.register(headerNib, forCellReuseIdentifier: HeaderCell.reuseID)
+        tableView?.register(headerNib, forCellReuseIdentifier: HeaderCell.reuseID)
         
         let footerNib = UINib(nibName: "PaymentFooterCell", bundle: nil)
-        tableView.register(footerNib, forCellReuseIdentifier: PaymentFooterCell.reuseID)
+        tableView?.register(footerNib, forCellReuseIdentifier: PaymentFooterCell.reuseID)
         
-        tableView.tableFooterView = UIView()
+        tableView?.tableFooterView = UIView()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView?.delegate = self
+        tableView?.dataSource = self
     }
     
     func displayData(viewModel: Payment.Model.ViewModel.ViewModelData) {
         switch viewModel {
         case .displayTimer(let time):
             headerCell?.setTimer(time: time)
+        case .displayTariffs(viewModel: let viewModel):
+            self.viewModel = viewModel
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
+        case .displatAlert(message: let message):
+            showErrorAlert(with: message)
         }
     }
     
-    @IBAction private func continueTapped() {
+    private func continueTapped() {
         dismiss(animated: true, completion: nil)
     }
     
@@ -68,25 +100,35 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
 extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.reuseID) as! HeaderCell
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.reuseID) as? HeaderCell
+        else { return nil }
         headerCell = cell
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {    220
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        220
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        viewModel.tariffs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PaymentCell.reuseID, for: indexPath) as! PaymentCell
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: PaymentCell.reuseID, for: indexPath) as? PaymentCell
+        else { return UITableViewCell() }
+        
+        let viewModel = viewModel.tariffs[indexPath.row]
+        cell.apply(viewModel: viewModel)
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PaymentFooterCell.reuseID) as! PaymentFooterCell
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: PaymentFooterCell.reuseID) as? PaymentFooterCell
+        else { return nil }
         
         cell.privacyPoliceCB = { [weak self] in
             guard let self = self else { return }
@@ -107,7 +149,9 @@ extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? PaymentCell else { return }
-        cell.toggleSelection()
+//        cell.toggleSelection()
+        let id = viewModel.tariffs[indexPath.row].tariffID
+        interactor?.makeRequest(request: .selectTariff(id: id))
     }
     
 }
