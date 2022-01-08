@@ -9,13 +9,21 @@
 import UIKit
 
 protocol PlayerRoutingLogic {
-    
+    func navigateToSubscribeScreen()
 }
 
 class PlayerRouter: NSObject, PlayerRoutingLogic {
     
+    
     weak var viewController: PlayerViewController?
     
     // MARK: Routing
+    
+    func navigateToSubscribeScreen() {
+        let assembly = PaymentAssembly()
+        let vc = assembly.assemble()
+        vc.modalPresentationStyle = .fullScreen
+        viewController?.present(vc, animated: true, completion: nil)
+    }
     
 }

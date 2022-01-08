@@ -16,6 +16,10 @@ class PlayerPresenter: PlayerPresentationLogic {
     weak var viewController: PlayerDisplayLogic?
     
     func presentData(response: Player.Model.Response.ResponseType) {
+        switch response {
+        case .presentEndFreeTimer:
+            viewController?.displayData(viewModel: .displatEndFreeTimer)
+        }
     }
     
 }

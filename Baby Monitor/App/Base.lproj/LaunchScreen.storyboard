@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +13,39 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoForAudioPlayer" translatesAutoresizingMaskIntoConstraints="NO" id="ZgB-Ka-CyE">
+                                <rect key="frame" x="85.5" y="246" width="243" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="Bfv-se-All"/>
+                                    <constraint firstAttribute="width" constant="243" id="sGV-LY-3wc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby Monitor Dino " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wE-TO-DJz">
+                                <rect key="frame" x="65" y="785" width="284" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZgB-Ka-CyE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-70" id="38D-Fd-bWm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2wE-TO-DJz" secondAttribute="bottom" constant="35" id="UG4-7r-0Td"/>
+                            <constraint firstItem="2wE-TO-DJz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="luE-PX-NiQ"/>
+                            <constraint firstItem="ZgB-Ka-CyE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zmK-PM-EyW"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logoForAudioPlayer" width="209.5" height="233.5"/>
+    </resources>
 </document>

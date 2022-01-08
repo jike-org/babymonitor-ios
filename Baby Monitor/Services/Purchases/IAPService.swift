@@ -90,7 +90,7 @@ extension IAPService: SKPaymentTransactionObserver {
     }
     
     private func completed(transaction: SKPaymentTransaction) {
-
+        UDService.shared.setSub()
         paymentQueue.finishTransaction(transaction)
     }
     

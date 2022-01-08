@@ -19,11 +19,13 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
     var router: (NSObjectProtocol & StreamRoutingLogic)?
     
     private var agoraKit: AgoraRtcEngineKit?
+//    private let channelID = Int.random(in: 1200..<9999)
+    private let channelID = 7899
     private var remoteView: UIView!
     private var audioEffectsIDs: [Int32] = [0, 1, 2, 3, 4, 5, 6]
     private var audioEffectsFilePaths: [String] = []
 //    private var audioEffectsFileIDs: [Int32] = []
-    private var currentEffectID: Int32 = 1
+    private var currentEffectID: Int32 = 0
     private var isStarted = false
     private var isMainCameraEnabled: Bool = false {
         didSet {
@@ -53,15 +55,20 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
         
-        let filePaths = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: "")
-        audioEffectsFilePaths.append(contentsOf: filePaths)
+//        let filePaths = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: "")
+//        audioEffectsFilePaths.append(contentsOf: filePaths)
+        
+        for i in 0..<AudioPaths.allCases.count {
+            let name = AudioPaths.allCases[i]
+            let filePath = Bundle.main.path(forResource: name.rawValue, ofType: "mp3")
+            audioEffectsFilePaths.append(filePath ?? "")
+        }
         
         for (path, id) in zip(audioEffectsFilePaths, audioEffectsIDs) {
             agoraKit?.preloadEffect(id, filePath: path)
         }
         
         saveBatteryStackView.isHidden = true
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -99,7 +106,7 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
         agoraKit?.setupLocalVideo(videoCanvas)
         
         agoraKit?.joinChannel(byToken: Constants.token,
-                              channelId: "test",
+                              channelId: "\(channelID)",
                               info: nil,
                               uid: 0,
                               joinSuccess: nil)
@@ -107,7 +114,7 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
     }
     
     private func showInviteAlert() {
-        let ac = UIAlertController(title: "Connection info", message: "To connect a parent unit to this session, enter the code: \"test\" on the parent's device", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Connection info", message: "To connect a parent unit to this session, enter the code: \(channelID) on the parent's device", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
         ac.addAction(okAction)
         present(ac, animated: true, completion: nil)

@@ -20,6 +20,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     private var previousIndexPath: IndexPath!
     private var headerCell: HeaderCell?
     private var viewModel = PaymentViewModel.init(tariffs: [])
+    private var selectedIndexPath: IndexPath?
     
     private var tableView: UITableView?
     
@@ -86,6 +87,16 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
             }
         case .displatAlert(message: let message):
             showErrorAlert(with: message)
+        case .displayBuySuccess:
+            showAlert(with: "Thanks for payment!", completion: {})
+            guard
+                let indexPath = selectedIndexPath,
+                let cell = tableView?.cellForRow(at: indexPath) as? PaymentCell
+            else { return }
+            cell.hideProgress()
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
         }
     }
     
@@ -148,8 +159,10 @@ extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? PaymentCell else { return }
-//        cell.toggleSelection()
+        guard let cell = tableView.cellForRow(at: indexPath) as? PaymentCell
+        else { return }
+        cell.showPogress()
+        selectedIndexPath = indexPath
         let id = viewModel.tariffs[indexPath.row].tariffID
         interactor?.makeRequest(request: .selectTariff(id: id))
     }

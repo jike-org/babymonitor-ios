@@ -21,6 +21,14 @@ class PlayerInteractor: PlayerBusinessLogic {
         if service == nil {
             service = PlayerService()
         }
+        
+        switch request {
+        case .startFreeTimer:
+            service?.startTimer(completion: { [weak self] in
+                guard let self = self else { return }
+                self.presenter?.presentData(response: .presentEndFreeTimer)
+            })
+        }
     }
     
 }

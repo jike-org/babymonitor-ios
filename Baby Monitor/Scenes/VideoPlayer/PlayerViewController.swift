@@ -21,7 +21,7 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     private var remoteView: UIView!
     private var localView: UIView!
     private var agoraKit: AgoraRtcEngineKit?
-    private var trackNames: [String] = ["White noise", "Waves", "Rain and thunder", "Drops", "Fireplace", "Forest", "Water in cave"]
+    private var trackNames: [String] = ["Drops", "Waves", "Forest", "Water in cave", "Rain and thunder", "White noise", "Fireplace"]
     private var currentTrackID: Int = 0
     
     @IBOutlet private weak var brightnessBtn: UIButton!
@@ -77,6 +77,17 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     }
     
     func displayData(viewModel: Player.Model.ViewModel.ViewModelData) {
+        switch viewModel {
+        case .displatEndFreeTimer:
+            agoraKit?.disableAudio()
+            agoraKit?.disableVideo()
+            agoraKit?.leaveChannel(nil)
+            AgoraRtcEngineKit.destroy()
+            
+            showAlert(with: "On free plan there`re available 15 free minutes viedo stream. Subscrinbe to use app without limits") {
+                self.router?.navigateToSubscribeScreen()
+            }
+        }
     }
     
     private func showJoinAlert() {
@@ -214,6 +225,10 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
 // MARK: - Agora Rtc Engine Delegate
 
 extension PlayerViewController: AgoraRtcEngineDelegate {
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
+        interactor?.makeRequest(request: .startFreeTimer)
+    }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         let videoCanvas = AgoraRtcVideoCanvas()

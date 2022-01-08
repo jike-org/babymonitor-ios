@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,30 +21,46 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJB-vD-xLi">
                         <rect key="frame" x="12" y="7" width="372" height="114"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gyT-3W-tiX">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-Jj-4aF">
                                 <rect key="frame" x="33" y="11" width="306" height="92"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="$1.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pw-LX-yDz">
-                                        <rect key="frame" x="0.0" y="0.0" width="306" height="65"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billed week $1.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaZ-vF-fDW">
-                                        <rect key="frame" x="0.0" y="75" width="306" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gyT-3W-tiX">
+                                        <rect key="frame" x="0.0" y="19.5" width="306" height="53.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOs-9u-BsF">
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="26.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="$1.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pw-LX-yDz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="250.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Bought" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6X-of-a2b">
+                                                        <rect key="frame" x="250.5" y="0.0" width="55.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billed week $1.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaZ-vF-fDW">
+                                                <rect key="frame" x="0.0" y="36.5" width="306" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gyT-3W-tiX" secondAttribute="trailing" constant="33" id="Jd3-Ck-gpW"/>
-                            <constraint firstItem="gyT-3W-tiX" firstAttribute="top" secondItem="eJB-vD-xLi" secondAttribute="top" constant="11" id="PSX-BC-HMK"/>
-                            <constraint firstItem="gyT-3W-tiX" firstAttribute="leading" secondItem="eJB-vD-xLi" secondAttribute="leading" constant="33" id="UdL-IM-dk4"/>
-                            <constraint firstAttribute="bottom" secondItem="gyT-3W-tiX" secondAttribute="bottom" constant="11" id="VeH-kk-qup"/>
+                            <constraint firstItem="RhT-Jj-4aF" firstAttribute="leading" secondItem="eJB-vD-xLi" secondAttribute="leading" constant="33" id="Hxs-Kq-Pxk"/>
+                            <constraint firstAttribute="bottom" secondItem="RhT-Jj-4aF" secondAttribute="bottom" constant="11" id="VwA-NN-dEY"/>
+                            <constraint firstItem="RhT-Jj-4aF" firstAttribute="top" secondItem="eJB-vD-xLi" secondAttribute="top" constant="11" id="lGz-kM-0Nk"/>
+                            <constraint firstAttribute="trailing" secondItem="RhT-Jj-4aF" secondAttribute="trailing" constant="33" id="oyx-9e-sgc"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -57,6 +74,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="boughtState" destination="M6X-of-a2b" id="9EG-nw-3ze"/>
                 <outlet property="selectView" destination="eJB-vD-xLi" id="ksl-YB-v0R"/>
                 <outlet property="tariffDescription" destination="MaZ-vF-fDW" id="4cv-BV-zPx"/>
                 <outlet property="totalAmount" destination="8Pw-LX-yDz" id="L5m-Dv-HGP"/>
@@ -64,4 +82,9 @@
             <point key="canvasLocation" x="68.115942028985515" y="119.86607142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

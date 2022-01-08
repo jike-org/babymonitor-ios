@@ -26,7 +26,7 @@ class PaymentPresenter: PaymentPresentationLogic {
             let viewModel = PaymentViewModel.init(tariffs: cells)
             viewController?.displayData(viewModel: .displayTariffs(viewModel: viewModel))
         case .presentSuccess:
-            viewController?.displayData(viewModel: .displatAlert(message: "Thanks for payment!"))
+            viewController?.displayData(viewModel: .displayBuySuccess)
         case .presentFailed(error: let error):
             viewController?.displayData(viewModel: .displatAlert(message: error.localizedDescription))
         case .presentRestored:
@@ -39,7 +39,8 @@ class PaymentPresenter: PaymentPresentationLogic {
         
         let price = priceStringFor(product: product)
         let isSelected = product.productIdentifier == selectedProduct ?? ""
-        return PaymentViewModel.Tariff.init(totalAmount: price,
+        return PaymentViewModel.Tariff.init(isBought: UDService.shared.isSub(),
+                                            totalAmount: price,
                                             priceDescription: product.localizedTitle,
                                             isSelected: isSelected,
                                             tariffID: product.productIdentifier)

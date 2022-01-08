@@ -25,11 +25,15 @@ class PaymentFooterCell: UITableViewCell {
     var privacyPoliceCB: (() -> Void)?
     
     @IBAction func termOfUseTapped() {
-        termOfUseCB?()
+        guard let url = URL(string: "http://babymonitordino.tilda.ws/terms") else { return }
+        UIApplication.shared.open(url)
+//        termOfUseCB?()
     }
     
     @IBAction func privacyPolicyTapped() {
-        privacyPoliceCB?()
+        guard let url = URL(string: "http://babymonitordino.tilda.ws/privacy") else { return }
+        UIApplication.shared.open(url)
+//        privacyPoliceCB?()
     }
     
     @IBAction private func restore() {

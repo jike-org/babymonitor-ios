@@ -18,4 +18,15 @@ extension UIViewController {
         
         present(ac, animated: true, completion: nil)
     }
+    
+    func showAlert(with message: String?, completion: @escaping () -> Void) {
+        let ac = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { action in
+            completion()
+        })
+        ac.addAction(okAction)
+        
+        present(ac, animated: true, completion: nil)
+    }
 }

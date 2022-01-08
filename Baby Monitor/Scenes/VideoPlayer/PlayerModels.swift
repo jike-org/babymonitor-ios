@@ -13,14 +13,17 @@ enum Player {
     enum Model {
         struct Request {
             enum RequestType {
+                case startFreeTimer
             }
         }
         struct Response {
             enum ResponseType {
+                case presentEndFreeTimer
             }
         }
         struct ViewModel {
             enum ViewModelData {
+                case displatEndFreeTimer
             }
         }
     }

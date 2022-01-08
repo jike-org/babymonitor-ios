@@ -10,6 +10,8 @@
 		E10432542785822000E29E16 /* NotificationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10432532785822000E29E16 /* NotificationCenterService.swift */; };
 		E1043256278591DE00E29E16 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1043255278591DE00E29E16 /* UIViewController+Extension.swift */; };
 		E104325927859D2E00E29E16 /* Adapty in Frameworks */ = {isa = PBXBuildFile; productRef = E104325827859D2E00E29E16 /* Adapty */; };
+		E104331D278974AE00E29E16 /* AudioPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = E104331C278974AE00E29E16 /* AudioPaths.swift */; };
+		E104331F278983EF00E29E16 /* UDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E104331E278983EF00E29E16 /* UDService.swift */; };
 		E106FC44275A160900022C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106FC43275A160900022C11 /* AppDelegate.swift */; };
 		E106FC46275A160900022C11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106FC45275A160900022C11 /* SceneDelegate.swift */; };
 		E106FC4D275A160B00022C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E106FC4C275A160B00022C11 /* Assets.xcassets */; };
@@ -93,6 +95,8 @@
 /* Begin PBXFileReference section */
 		E10432532785822000E29E16 /* NotificationCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterService.swift; sourceTree = "<group>"; };
 		E1043255278591DE00E29E16 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		E104331C278974AE00E29E16 /* AudioPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPaths.swift; sourceTree = "<group>"; };
+		E104331E278983EF00E29E16 /* UDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDService.swift; sourceTree = "<group>"; };
 		E106FC40275A160900022C11 /* Baby Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baby Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E106FC43275A160900022C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E106FC45275A160900022C11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 			children = (
 				E16C0187277D96D200B5F75D /* Purchases */,
 				E10432532785822000E29E16 /* NotificationCenterService.swift */,
+				E104331E278983EF00E29E16 /* UDService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				E16C015F277866D600B5F75D /* Fireplace.mp3 */,
 				E16C015D277866D500B5F75D /* Forest.mp3 */,
 				E16C015C277866D500B5F75D /* WaterInCave.mp3 */,
+				E104331C278974AE00E29E16 /* AudioPaths.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -570,10 +576,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1043256278591DE00E29E16 /* UIViewController+Extension.swift in Sources */,
+				E104331F278983EF00E29E16 /* UDService.swift in Sources */,
 				E16C017F277B566100B5F75D /* AudioPlayerRouter.swift in Sources */,
 				E106FC68275A175B00022C11 /* StartModels.swift in Sources */,
 				E16C0189277D96E600B5F75D /* IAPProducts.swift in Sources */,
 				E1334745276743FC00ACE00C /* AdviceViewController.swift in Sources */,
+				E104331D278974AE00E29E16 /* AudioPaths.swift in Sources */,
 				E106FCAA275A867500022C11 /* PaymentRouter.swift in Sources */,
 				E16C018B277D972E00B5F75D /* IAPService.swift in Sources */,
 				E106FC82275A26BB00022C11 /* PlayerViewController.swift in Sources */,
@@ -768,7 +776,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -792,7 +800,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

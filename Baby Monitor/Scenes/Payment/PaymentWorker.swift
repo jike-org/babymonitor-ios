@@ -26,7 +26,6 @@ class PaymentService {
     
     func selectProduct(id: String, completion: @escaping ([SKProduct], String?) -> Void) {
         selectedProductID = id
-        print(products.count)
         completion(products, selectedProductID)
         iapService.purchase(productWith: selectedProductID)
     }

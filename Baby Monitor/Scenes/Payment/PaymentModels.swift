@@ -31,6 +31,7 @@ enum Payment {
             enum ViewModelData {
                 case displayTimer(time: String)
                 case displatAlert(message: String)
+                case displayBuySuccess
                 case displayTariffs(viewModel: PaymentViewModel)
             }
         }
@@ -40,6 +41,7 @@ enum Payment {
 
 struct PaymentViewModel {
     struct Tariff: PaymentCellViewModel {
+        var isBought: Bool
         var totalAmount: String
         var priceDescription: String
         var isSelected: Bool
