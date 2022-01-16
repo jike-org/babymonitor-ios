@@ -19,10 +19,13 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     var router: (NSObjectProtocol & PlayerRoutingLogic)?
     
     private var remoteView: UIView!
+    private var token: String?
     private var localView: UIView!
     private var agoraKit: AgoraRtcEngineKit?
     private var trackNames: [String] = ["Drops", "Waves", "Forest", "Water in cave", "Rain and thunder", "White noise", "Fireplace"]
     private var currentTrackID: Int = 0
+    private var channelID: String?
+    private let userID: UInt = 2
     
     @IBOutlet private weak var brightnessBtn: UIButton!
     @IBOutlet private weak var videoBtn: UIButton!
@@ -43,32 +46,30 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
         
         setupVideoCall()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            self.showJoinAlert()
-        }
-        
         brightnessSlider.isHidden = true
         brightnessSlider.minimumValue = 0.1
         
         trackNameLabel.text = trackNames[currentTrackID]
+        
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         remoteView.frame = view.bounds
+        
+        showJoinAlert { channelID in
+            self.channelID = channelID
+            self.interactor?.makeRequest(request: .generateToken(channelID: "\(channelID)", role: .subscriber))
+        }
+        
+        agoraKit?.enableAudio()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         agoraKit?.disableAudio()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        agoraKit?.enableAudio()
     }
     
     deinit {
@@ -87,24 +88,12 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
             showAlert(with: "On free plan there`re available 15 free minutes viedo stream. Subscrinbe to use app without limits") {
                 self.router?.navigateToSubscribeScreen()
             }
+        case .saveToken(token: let token):
+            self.token = token
+            self.joinAgoraChannel(channelID: channelID)
+        case .showAlert(message: let message):
+            showErrorAlert(with: message)
         }
-    }
-    
-    private func showJoinAlert() {
-        let alert = UIAlertController(title: "Connect to session", message: "Enter channel ID for connection to baby unit session", preferredStyle: .alert)
-        alert.addTextField()
-        
-        let action = UIAlertAction(title: "Connect", style: .default) { [weak alert, weak self] _ in
-            guard
-                let text = alert?.textFields![0].text,
-                let self = self
-            else { return }
-            
-            self.joinAgoraChannel(channelID: text)
-        }
-        
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
     }
     
     private func setupVideoCall() {
@@ -119,18 +108,23 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
         agoraKit?.createDataStream(myLet, config: config)
         
         let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = 0
+        videoCanvas.uid = userID
         videoCanvas.renderMode = .hidden
         videoCanvas.view = localView
         
         agoraKit?.setupLocalVideo(videoCanvas)
     }
     
-    private func joinAgoraChannel(channelID: String) {
-        agoraKit?.joinChannel(byToken: Constants.token,
+    private func joinAgoraChannel(channelID: String?) {
+        guard
+            let token = token,
+            let channelID = channelID
+        else { return }
+        
+        agoraKit?.joinChannel(byToken: token,
                               channelId: channelID,
                               info: nil,
-                              uid: 0,
+                              uid: userID,
                               joinSuccess: nil)
     }
     

@@ -19,6 +19,13 @@ class PlayerPresenter: PlayerPresentationLogic {
         switch response {
         case .presentEndFreeTimer:
             viewController?.displayData(viewModel: .displatEndFreeTimer)
+        case .presentTokenGeneration(result: let result):
+            switch result {
+            case .failure(let error):
+                viewController?.displayData(viewModel: .showAlert(message: error.localizedDescription))
+            case .success(let response):
+                viewController?.displayData(viewModel: .saveToken(token: response.token))
+            }
         }
     }
     

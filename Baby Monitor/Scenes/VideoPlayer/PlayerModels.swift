@@ -14,18 +14,24 @@ enum Player {
         struct Request {
             enum RequestType {
                 case startFreeTimer
+                case generateToken(channelID: String, role: UserRole)
             }
         }
         struct Response {
             enum ResponseType {
                 case presentEndFreeTimer
+                case presentTokenGeneration(result: Result<CreateTokenResponse, Error>)
             }
         }
         struct ViewModel {
             enum ViewModelData {
                 case displatEndFreeTimer
+                case showAlert(message: String)
+                case saveToken(token: String?)
             }
         }
     }
     
 }
+
+

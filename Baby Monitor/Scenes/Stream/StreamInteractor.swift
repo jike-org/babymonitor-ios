@@ -21,6 +21,14 @@ class StreamInteractor: StreamBusinessLogic {
         if service == nil {
             service = StreamService()
         }
+        
+        switch request {
+        case .generateToken(let channelID, let role):
+            service?.generateToken(channelID: channelID, role: role, completion: { [weak self] result in
+                guard let self = self else { return }
+                self.presenter?.presentData(response: .presentTokenGeneration(result: result))
+            })
+        }
     }
     
 }

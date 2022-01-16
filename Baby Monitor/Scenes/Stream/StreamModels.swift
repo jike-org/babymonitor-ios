@@ -13,14 +13,18 @@ enum Stream {
     enum Model {
         struct Request {
             enum RequestType {
+                case generateToken(channelID: String, role: UserRole)
             }
         }
         struct Response {
             enum ResponseType {
+                case presentTokenGeneration(result: Result<CreateTokenResponse, Error>)
             }
         }
         struct ViewModel {
             enum ViewModelData {
+                case showAlert(message: String)
+                case saveToken(token: String?)
             }
         }
     }

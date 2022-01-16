@@ -28,6 +28,11 @@ class PlayerInteractor: PlayerBusinessLogic {
                 guard let self = self else { return }
                 self.presenter?.presentData(response: .presentEndFreeTimer)
             })
+        case .generateToken(channelID: let channelID, role: let role):
+            service?.generateToken(channelID: channelID, role: role, completion: { [weak self] result in
+                guard let self = self else { return }
+                self.presenter?.presentData(response: .presentTokenGeneration(result: result))
+            })
         }
     }
     

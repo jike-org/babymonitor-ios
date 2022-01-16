@@ -69,6 +69,11 @@
 		E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475627675A5E00ACE00C /* CustomSlider.swift */; };
 		E133475A27675F2D00ACE00C /* LegalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475927675F2D00ACE00C /* LegalsViewController.swift */; };
 		E133475D27675F7900ACE00C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475C27675F7900ACE00C /* Constraint.swift */; };
+		E1501FD027948946004E3A3B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FCF27948946004E3A3B /* API.swift */; };
+		E1501FD2279489A2004E3A3B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FD1279489A2004E3A3B /* Networking.swift */; };
+		E1501FD527948A0D004E3A3B /* UsersRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FD427948A0D004E3A3B /* UsersRepo.swift */; };
+		E1501FD827948AA8004E3A3B /* CreateTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FD727948AA8004E3A3B /* CreateTokenResponse.swift */; };
+		E1501FDA27948B7F004E3A3B /* HttpErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FD927948B7F004E3A3B /* HttpErros.swift */; };
 		E16C0161277866D600B5F75D /* Drops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015A277866D500B5F75D /* Drops.mp3 */; };
 		E16C0162277866D600B5F75D /* WhiteNoise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015B277866D500B5F75D /* WhiteNoise.mp3 */; };
 		E16C0163277866D600B5F75D /* WaterInCave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E16C015C277866D500B5F75D /* WaterInCave.mp3 */; };
@@ -156,6 +161,11 @@
 		E133475627675A5E00ACE00C /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		E133475927675F2D00ACE00C /* LegalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalsViewController.swift; sourceTree = "<group>"; };
 		E133475C27675F7900ACE00C /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		E1501FCF27948946004E3A3B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E1501FD1279489A2004E3A3B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		E1501FD427948A0D004E3A3B /* UsersRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepo.swift; sourceTree = "<group>"; };
+		E1501FD727948AA8004E3A3B /* CreateTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTokenResponse.swift; sourceTree = "<group>"; };
+		E1501FD927948B7F004E3A3B /* HttpErros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpErros.swift; sourceTree = "<group>"; };
 		E16C015A277866D500B5F75D /* Drops.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Drops.mp3; sourceTree = "<group>"; };
 		E16C015B277866D500B5F75D /* WhiteNoise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WhiteNoise.mp3; sourceTree = "<group>"; };
 		E16C015C277866D500B5F75D /* WaterInCave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WaterInCave.mp3; sourceTree = "<group>"; };
@@ -251,6 +261,9 @@
 		E106FC59275A162600022C11 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E1501FD627948A9E004E3A3B /* Models */,
+				E1501FD3279489A6004E3A3B /* Repositories */,
+				E1501FCE2794893D004E3A3B /* Network */,
 				E16C0187277D96D200B5F75D /* Purchases */,
 				E10432532785822000E29E16 /* NotificationCenterService.swift */,
 				E104331E278983EF00E29E16 /* UDService.swift */,
@@ -443,6 +456,32 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		E1501FCE2794893D004E3A3B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E1501FCF27948946004E3A3B /* API.swift */,
+				E1501FD1279489A2004E3A3B /* Networking.swift */,
+				E1501FD927948B7F004E3A3B /* HttpErros.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E1501FD3279489A6004E3A3B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E1501FD427948A0D004E3A3B /* UsersRepo.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E1501FD627948A9E004E3A3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1501FD727948AA8004E3A3B /* CreateTokenResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E16C0159277865AF00B5F75D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +621,7 @@
 				E16C0189277D96E600B5F75D /* IAPProducts.swift in Sources */,
 				E1334745276743FC00ACE00C /* AdviceViewController.swift in Sources */,
 				E104331D278974AE00E29E16 /* AudioPaths.swift in Sources */,
+				E1501FDA27948B7F004E3A3B /* HttpErros.swift in Sources */,
 				E106FCAA275A867500022C11 /* PaymentRouter.swift in Sources */,
 				E16C018B277D972E00B5F75D /* IAPService.swift in Sources */,
 				E106FC82275A26BB00022C11 /* PlayerViewController.swift in Sources */,
@@ -593,6 +633,7 @@
 				E106FCB6275A87A100022C11 /* PaymentCell.swift in Sources */,
 				E106FC9B275A769900022C11 /* StreamAssembly.swift in Sources */,
 				E16C0184277B566100B5F75D /* AudioPlayerInteractor.swift in Sources */,
+				E1501FD527948A0D004E3A3B /* UsersRepo.swift in Sources */,
 				E106FCAC275A867500022C11 /* PaymentViewController.swift in Sources */,
 				E106FC81275A26BB00022C11 /* PlayerModels.swift in Sources */,
 				E1334741276743FC00ACE00C /* AdvicePresenter.swift in Sources */,
@@ -623,12 +664,15 @@
 				E106FC65275A175B00022C11 /* StartPresenter.swift in Sources */,
 				E106FCAD275A867500022C11 /* PaymentInteractor.swift in Sources */,
 				E106FC72275A18F800022C11 /* UIColor+Extension.swift in Sources */,
+				E1501FD2279489A2004E3A3B /* Networking.swift in Sources */,
+				E1501FD827948AA8004E3A3B /* CreateTokenResponse.swift in Sources */,
 				E106FCA9275A867500022C11 /* PaymentWorker.swift in Sources */,
 				E16C0181277B566100B5F75D /* AudioPlayerModels.swift in Sources */,
 				E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */,
 				E106FCAB275A867500022C11 /* PaymentModels.swift in Sources */,
 				E106FC80275A26BB00022C11 /* PlayerRouter.swift in Sources */,
 				E13347382767426300ACE00C /* Menu.swift in Sources */,
+				E1501FD027948946004E3A3B /* API.swift in Sources */,
 				E106FCA8275A867500022C11 /* PaymentPresenter.swift in Sources */,
 				E1AA3D24277608B00053338B /* Commands.swift in Sources */,
 				E16C0183277B566100B5F75D /* AudioPlayerAssembly.swift in Sources */,
@@ -776,7 +820,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -800,7 +844,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

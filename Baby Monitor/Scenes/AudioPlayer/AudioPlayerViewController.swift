@@ -34,6 +34,10 @@ class AudioPlayerViewController: UIViewController, AudioPlayerDisplayLogic {
         view.backgroundColor = .beige
         
         trackName.text = trackNames[currentTrackID]
+        
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+        setupAudio()
     }
     
     func displayData(viewModel: AudioPlayer.Model.ViewModel.ViewModelData) {
@@ -46,7 +50,10 @@ class AudioPlayerViewController: UIViewController, AudioPlayerDisplayLogic {
         
         do {
             myAudio = try AVAudioPlayer(contentsOf: url)
-            myAudio?.numberOfLoops = 1000
+            
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            myAudio?.numberOfLoops = -1
             myAudio?.prepareToPlay()
         } catch {
             showErrorAlert(with: "Can`t load track")

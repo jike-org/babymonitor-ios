@@ -19,14 +19,16 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
     var router: (NSObjectProtocol & StreamRoutingLogic)?
     
     private var agoraKit: AgoraRtcEngineKit?
-//    private let channelID = Int.random(in: 1200..<9999)
-    private let channelID = 7899
+    private let channelID = Int.random(in: 1200..<9999)
+//    private let channelID = 7899
     private var remoteView: UIView!
     private var audioEffectsIDs: [Int32] = [0, 1, 2, 3, 4, 5, 6]
     private var audioEffectsFilePaths: [String] = []
 //    private var audioEffectsFileIDs: [Int32] = []
     private var currentEffectID: Int32 = 0
     private var isStarted = false
+    private var token: String?
+    private let userID: UInt = 1
     private var isMainCameraEnabled: Bool = false {
         didSet {
             toggleFlash()
@@ -42,15 +44,14 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interactor?.makeRequest(request: .generateToken(channelID: "\(channelID)", role: .publisher))
+        
         remoteView = UIView()
         view.insertSubview(remoteView, at: 0)
         
         view.backgroundColor = .beige
         setupVideoCall()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.showInviteAlert()
-        }
         
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
@@ -88,6 +89,23 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
         }
     }
     
+    func displayData(viewModel: Stream.Model.ViewModel.ViewModelData) {
+        switch viewModel {
+        case .saveToken(token: let token):
+            self.token = token
+            
+            agoraKit?.joinChannel(byToken: token,
+                                  channelId: "\(channelID)",
+                                  info: nil,
+                                  uid: userID,
+                                  joinSuccess: nil)
+            
+            showInviteAlert(channelID: channelID)
+        case .showAlert(message: let message):
+            showErrorAlert(with: message)
+        }
+    }
+    
     private func setupVideoCall() {
         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: Constants.appID, delegate: self)
         
@@ -100,24 +118,10 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
         agoraKit?.createDataStream(myLet, config: config)
         
         let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = 0
+        videoCanvas.uid = userID
         videoCanvas.renderMode = .hidden
         
         agoraKit?.setupLocalVideo(videoCanvas)
-        
-        agoraKit?.joinChannel(byToken: Constants.token,
-                              channelId: "\(channelID)",
-                              info: nil,
-                              uid: 0,
-                              joinSuccess: nil)
-        
-    }
-    
-    private func showInviteAlert() {
-        let ac = UIAlertController(title: "Connection info", message: "To connect a parent unit to this session, enter the code: \(channelID) on the parent's device", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
-        ac.addAction(okAction)
-        present(ac, animated: true, completion: nil)
     }
     
     private func toggleFlash() {
@@ -128,12 +132,7 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
                 if (device.torchMode == AVCaptureDevice.TorchMode.on) {
                     device.torchMode = AVCaptureDevice.TorchMode.off
                 } else {
-                    do {
-                        device.torchMode = AVCaptureDevice.TorchMode.on
-//                        try device.setTorchModeOn(level: 1.0)
-                    } catch {
-                        print(error)
-                    }
+                    device.torchMode = AVCaptureDevice.TorchMode.on
                 }
                 device.unlockForConfiguration()
             } catch {
@@ -151,9 +150,6 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
         device.unlockForConfiguration()
     }
     
-    func displayData(viewModel: Stream.Model.ViewModel.ViewModelData) {
-    }
-    
     @IBAction private func dismissScene() {
         dismiss(animated: true, completion: nil)
     }
@@ -164,7 +160,7 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
     }
     
     @IBAction private func showConnectionInfo() {
-        showInviteAlert()
+        showInviteAlert(channelID: channelID)
     }
     
 }
@@ -201,7 +197,7 @@ extension StreamViewController: AgoraRtcEngineDelegate {
         }
         agoraKit?.playEffect(currentEffectID,
                              filePath: audioEffectsFilePaths[Int(currentEffectID)],
-                             loopCount: 1,
+                             loopCount: 1000,
                              pitch: 1.0,
                              pan: 0,
                              gain: 100,
@@ -242,11 +238,13 @@ extension StreamViewController: AgoraRtcEngineDelegate {
             }
         case .nextTrack:
             agoraKit?.stopEffect(currentEffectID)
+            
             if currentEffectID == 6 {
                 currentEffectID = 0
             } else {
                 currentEffectID += 1
             }
+
             agoraKit?.playEffect(currentEffectID,
                                  filePath: audioEffectsFilePaths[Int(currentEffectID)],
                                  loopCount: 1,
@@ -257,11 +255,13 @@ extension StreamViewController: AgoraRtcEngineDelegate {
                                  startPos: 0)
         case .previousTrack:
             agoraKit?.stopEffect(currentEffectID)
+            
             if currentEffectID == 0 {
                 currentEffectID = 6
             } else {
                 currentEffectID -= 1
             }
+            
             agoraKit?.playEffect(currentEffectID,
                                  filePath: audioEffectsFilePaths[Int(currentEffectID)],
                                  loopCount: 1,
