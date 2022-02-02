@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import StoreKit
+import Adapty
 
 enum Payment {
     
@@ -15,13 +15,16 @@ enum Payment {
         struct Request {
             enum RequestType {
                 case checkTrialAvalabilty
-                case selectTariff(id: String)
+//                case selectTariff(id: String)
+                case fetchProducts
+                case makePurchase(product: ProductModel)
+                case restore
             }
         }
         struct Response {
             enum ResponseType {
                 case presentTimer
-                case presentTariffs(tariffs: [SKProduct], selectedProduct: String?)
+                case presentTariffs(result: Result<[ProductModel], Error>, selectedProduct: String?)
                 case presentSuccess
                 case presentFailed(error: Error)
                 case presentRestored
@@ -45,7 +48,7 @@ struct PaymentViewModel {
         var totalAmount: String
         var priceDescription: String
         var isSelected: Bool
-        var tariffID: String
+        var productModel: ProductModel
     }
     
     let tariffs: [Tariff]

@@ -33,6 +33,7 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     @IBOutlet private weak var playPauseBtn: UIButton!
     @IBOutlet private weak var brightnessSlider: UISlider!
     @IBOutlet private weak var trackNameLabel: UILabel!
+    @IBOutlet private weak var remainingTime: UILabel!
     
     // MARK: View lifecycle
     
@@ -41,6 +42,7 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
         
         view.backgroundColor = .beige
         
+        remainingTime.isHidden = true
         remoteView = UIView()
         view.insertSubview(remoteView, at: 0)
         
@@ -93,6 +95,9 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
             self.joinAgoraChannel(channelID: channelID)
         case .showAlert(message: let message):
             showErrorAlert(with: message)
+        case .displayRemainingTime(time: let time):
+            remainingTime.isHidden = false
+            remainingTime.text = time
         }
     }
     
@@ -221,7 +226,8 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
 extension PlayerViewController: AgoraRtcEngineDelegate {
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
-        interactor?.makeRequest(request: .startFreeTimer)
+        interactor?.makeRequest(request: .startSession)
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
@@ -232,5 +238,11 @@ extension PlayerViewController: AgoraRtcEngineDelegate {
 
         agoraKit?.setupRemoteVideo(videoCanvas)
     }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didLeaveChannelWith stats: AgoraChannelStats) {
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
+    
+    
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Adapty
 
 protocol PaymentDisplayLogic: AnyObject {
     func displayData(viewModel: Payment.Model.ViewModel.ViewModelData)
@@ -23,6 +24,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     private var selectedIndexPath: IndexPath?
     
     private var tableView: UITableView?
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -37,9 +39,13 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupContraints()
         setupTableView()
         
         view.backgroundColor = .lightPurple
+        activityIndicator.hidesWhenStopped = true
+        
+        interactor?.makeRequest(request: .fetchProducts)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,11 +54,19 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
         interactor?.makeRequest(request: .checkTrialAvalabilty)
     }
     
-    private func setupTableView() {
+    private func setupContraints() {
         tableView = UITableView(frame: view.bounds, style: .grouped)
-        tableView?.separatorStyle = .none
+        
         view.addSubview(tableView!)
+        view.addSubview(activityIndicator)
+        
         tableView?.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
         
         NSLayoutConstraint.activate([
             tableView!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -60,6 +74,11 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
             tableView!.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView!.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func setupTableView() {
+        guard tableView != nil else { return }
+        tableView?.separatorStyle = .none
         
         let nibCell = UINib(nibName: "PaymentCell", bundle: nil)
         tableView?.register(nibCell, forCellReuseIdentifier: PaymentCell.reuseID)
@@ -86,6 +105,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
                 self.tableView?.reloadData()
             }
         case .displatAlert(message: let message):
+            activityIndicator.stopAnimating()
             showErrorAlert(with: message)
         case .displayBuySuccess:
             showAlert(with: "Thanks for payment!", completion: {})
@@ -97,6 +117,11 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
             DispatchQueue.main.async {
                 self.tableView?.reloadData()
             }
+            
+            if let menu = tabBarController as? Menu {
+                menu.checkPremiumActive()
+            }
+            activityIndicator.stopAnimating()
         }
     }
     
@@ -163,8 +188,9 @@ extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
         else { return }
         cell.showPogress()
         selectedIndexPath = indexPath
-        let id = viewModel.tariffs[indexPath.row].tariffID
-        interactor?.makeRequest(request: .selectTariff(id: id))
+        let model = viewModel.tariffs[indexPath.row].productModel
+        interactor?.makeRequest(request: .makePurchase(product: model))
+        activityIndicator.startAnimating()
     }
     
 }

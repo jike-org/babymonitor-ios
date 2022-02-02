@@ -19,7 +19,7 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
     var router: (NSObjectProtocol & StreamRoutingLogic)?
     
     private var agoraKit: AgoraRtcEngineKit?
-    private let channelID = Int.random(in: 1200..<9999)
+    private let channelID = Int.random(in: 120000..<999999)
 //    private let channelID = 7899
     private var remoteView: UIView!
     private var audioEffectsIDs: [Int32] = [0, 1, 2, 3, 4, 5, 6]
@@ -180,6 +180,7 @@ extension StreamViewController: AgoraRtcEngineDelegate {
         remoteCanvas.view = remoteView
         
         agoraKit?.setupRemoteVideo(remoteCanvas)
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
@@ -187,6 +188,7 @@ extension StreamViewController: AgoraRtcEngineDelegate {
         infoLabel.text = "Waiting for parent unit connection..."
         infoLabel.textColor = .black
         agoraKit?.stopAllEffects()
+        UIApplication.shared.isIdleTimerDisabled = false
     }
     
     func rtcEngineDidAudioEffectFinish(_ engine: AgoraRtcEngineKit, soundId: Int) {

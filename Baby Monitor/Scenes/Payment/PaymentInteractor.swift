@@ -22,14 +22,33 @@ class PaymentInteractor: PaymentBusinessLogic {
         switch request {
         case .checkTrialAvalabilty:
             presenter?.presentData(response: .presentTimer)
-        case .selectTariff(id: let id):
-            service.selectProduct(id: id, completion: { [weak self] products, selected in
+        case .fetchProducts:
+            service.fetchProducts { [weak self] result in
                 guard let self = self else { return }
-                self.presenter?.presentData(response: .presentTariffs(tariffs: products, selectedProduct: selected))
-            })
+                self.presenter?.presentData(response: .presentTariffs(result: result, selectedProduct: nil))
+            }
+        case .makePurchase(product: let product):
+            service.makePurchase(with: product) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .failure(let error):
+                    self.presenter?.presentData(response: .presentFailed(error: error))
+                case .success(_):
+                    self.presenter?.presentData(response: .presentSuccess)
+                }
+            }
+        case .restore:
+            service.restore { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .failure(let error):
+                    self.presenter?.presentData(response: .presentFailed(error: error))
+                case .success(_):
+                    self.presenter?.presentData(response: .presentSuccess)
+                }
+            }
         }
     }
-    
 }
 
 // MARK: - IAP Service Delegate
@@ -49,8 +68,6 @@ extension PaymentInteractor: IAPServiceDelegate {
     }
     
     func productsFetched(_ products: [SKProduct]) {
-        service.products = products
-        presenter?.presentData(response: .presentTariffs(tariffs: products, selectedProduct: nil))
     }
     
 }

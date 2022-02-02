@@ -23,7 +23,7 @@ class PaymentAssembly {
         presenter.viewController = vc
         router.viewController = vc
         
-        IAPService.shared.delegate = interactor
+//        IAPService.shared.delegate = interactor
         
         return vc
     }

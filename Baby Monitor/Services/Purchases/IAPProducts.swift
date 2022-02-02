@@ -10,5 +10,5 @@ import Foundation
 enum IAPProducts: String {
     case weekly = "stardev.BabyMonitor.weekly"
     case monthly = "stardev.BabyMonitor.monthly"
-    case lifetime = "stardev.BabyMonitor.lifetime2"
+    case lifetime = "stardev.BabyMonitor.annually"
 }

@@ -6,21 +6,55 @@
 //
 
 import UIKit
+import Adapty
 
 class Menu: UITabBarController {
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        Adapty.delegate = self
+
+        buildInactiveSubTabbar()
+        checkPremiumActive()
+
+        tabBar.tintColor = .customPurple
+    }
+    
+    func checkPremiumActive() {
+        Adapty.getPurchaserInfo { [weak self] purchaserInfo, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                UDService.shared.deactivateSub()
+                self.buildInactiveSubTabbar()
+            }
+            
+            let isActiveSub = purchaserInfo?.accessLevels["premium"]?.isActive ?? false
+            
+            if isActiveSub {
+                UDService.shared.activateSub()
+                self.buildActiveSubTabbar()
+            }
+        }
+    }
+    
+    private func buildActiveSubTabbar() {
+        viewControllers = [
+            createStartScreen(),
+            createMusicScreen(),
+            createAdviceScreen()
+        ]
+    }
+    
+    private func buildInactiveSubTabbar() {
         viewControllers = [
             createStartScreen(),
             createMusicScreen(),
             createAdviceScreen(),
             createSubscribtionScreen()
         ]
-        
-        tabBar.tintColor = .customPurple
     }
     
     private func createStartScreen() -> StartViewController {
@@ -70,5 +104,17 @@ class Menu: UITabBarController {
         vc.tabBarItem = item
         return vc
     }
+    
+}
+
+extension Menu: AdaptyDelegate {
+    
+    func didReceiveUpdatedPurchaserInfo(_ purchaserInfo: PurchaserInfoModel) {
+        checkPremiumActive()
+    }
+    
+    func didReceivePromo(_ promo: PromoModel) {
+    }
+    
     
 }

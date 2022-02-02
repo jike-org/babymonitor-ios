@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import StoreKit
+import Adapty
 
 protocol PaymentPresentationLogic {
     func presentData(response: Payment.Model.Response.ResponseType)
@@ -21,10 +21,15 @@ class PaymentPresenter: PaymentPresentationLogic {
         switch response {
         case .presentTimer:
             startTimer(durationInSeconds: 10000)
-        case .presentTariffs(let tariffs, let selectedProduct):
-            let cells = tariffs.map { self.productToTariffViewModel($0, selectedProduct) }
-            let viewModel = PaymentViewModel.init(tariffs: cells)
-            viewController?.displayData(viewModel: .displayTariffs(viewModel: viewModel))
+        case .presentTariffs(let res, let selectedProduct):
+            switch res {
+            case .failure(let error):
+                viewController?.displayData(viewModel: .displatAlert(message: error.localizedDescription))
+            case .success(let products):
+                let cells = products.map { self.productToTariffViewModel($0, selectedProduct) }
+                let viewModel = PaymentViewModel.init(tariffs: cells)
+                viewController?.displayData(viewModel: .displayTariffs(viewModel: viewModel))
+            }
         case .presentSuccess:
             viewController?.displayData(viewModel: .displayBuySuccess)
         case .presentFailed(error: let error):
@@ -34,24 +39,29 @@ class PaymentPresenter: PaymentPresentationLogic {
         }
     }
     
-    private func productToTariffViewModel(_ product: SKProduct, _ selectedProduct: String?) -> PaymentViewModel.Tariff {
+    private func productToTariffViewModel(_ product: ProductModel, _ selectedProduct: String?) -> PaymentViewModel.Tariff {
 //        let price = "$\(product.price.doubleValue / 100)" + "/ \(product.subscriptionPeriod?.description ?? "")"
         
         let price = priceStringFor(product: product)
-        let isSelected = product.productIdentifier == selectedProduct ?? ""
+        let isSelected = product.skProduct?.productIdentifier == selectedProduct ?? nil
         return PaymentViewModel.Tariff.init(isBought: UDService.shared.isSub(),
                                             totalAmount: price,
                                             priceDescription: product.localizedTitle,
                                             isSelected: isSelected,
-                                            tariffID: product.productIdentifier)
+                                            productModel: product)
     }
     
-    private func priceStringFor(product: SKProduct) -> String {
+    private func priceStringFor(product: ProductModel) -> String {
         let numFormatter = NumberFormatter()
         numFormatter.numberStyle = .currency
-        numFormatter.locale = product.priceLocale
+        numFormatter.locale = product.skProduct?.priceLocale
         
-        return "\(numFormatter.string(from: product.price) ?? "")"
+        guard
+            let num = product.skProduct?.price,
+            let res = numFormatter.string(from: num)
+        else { return ""}
+
+        return res
     }
     
     private func startTimer(durationInSeconds: Int) {

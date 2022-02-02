@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import StoreKit
+import Adapty
 
 class PaymentService {
     
-    var products: [SKProduct] = []
     private let iapService: IAPService
     private var selectedProductID: String?
     
@@ -19,15 +18,45 @@ class PaymentService {
         self.iapService = iapService
     }
     
-//    func fetchProducts(completion: @escaping ([SKProduct], String?) -> Void) {
-//        iapService.fetchProducts()
-//        completion(products, selectedProductID)
-//    }
+    func fetchProducts(completion: @escaping (Result<[ProductModel], Error>) -> Void) {
+        Adapty.getPaywalls { paywalls, productModels, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            
+            guard let productModels = productModels else { return }
+            completion(.success(productModels))
+        }
+    }
     
-    func selectProduct(id: String, completion: @escaping ([SKProduct], String?) -> Void) {
-        selectedProductID = id
-        completion(products, selectedProductID)
-        iapService.purchase(productWith: selectedProductID)
+    func makePurchase(with product: ProductModel, completion: @escaping (Result<Void, Error>) -> Void) {
+        Adapty.makePurchase(product: product) { purchaserInfo, reciept, appleRecieptParametrs, productModel, error in
+            if let error = error {
+                UDService.shared.deactivateSub()
+                completion(.failure(error))
+            }
+            
+            let isActive = purchaserInfo?.accessLevels["premium"]?.isActive ?? false
+            if isActive {
+                UDService.shared.activateSub()
+                completion(.success(()))
+            }
+        }
+    }
+    
+    func restore(completion: @escaping (Result<Void, Error>) -> Void) {
+        Adapty.restorePurchases { purchaserInfo, reciept, appleRecieptParametrs, error in
+            if let error = error {
+                UDService.shared.deactivateSub()
+                completion(.failure(error))
+            }
+            
+            let isActive = purchaserInfo?.accessLevels["premium"]?.isActive ?? false
+            if isActive {
+                UDService.shared.activateSub()
+                completion(.success(()))
+            }
+        }
     }
     
 }

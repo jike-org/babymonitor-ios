@@ -26,7 +26,12 @@ class PlayerPresenter: PlayerPresentationLogic {
             case .success(let response):
                 viewController?.displayData(viewModel: .saveToken(token: response.token))
             }
+        case .presentRemainingTime(time: let remainingTime):
+            let time = "The trial time expires in: " + remainingTime
+            viewController?.displayData(viewModel: .displayRemainingTime(time: time))
         }
     }
+    
+    
     
 }

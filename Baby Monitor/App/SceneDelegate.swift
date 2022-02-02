@@ -18,34 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let winScene = (scene as? UIWindowScene) else { return }
-        let storyboard = UIStoryboard(name: "StartViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "StartViewController") { coder in
-            let assembly = StartAssembly()
-            return assembly.assemble(coder: coder)
-        }
+//        let storyboard = UIStoryboard(name: "StartViewController", bundle: nil)
+//        storyboard.instantiateViewController(identifier: "StartViewController") { coder in
+//            let assembly = StartAssembly()
+//            return assembly.assemble(coder: coder)
+//        }
         window = UIWindow(frame: winScene.coordinateSpace.bounds)
         window?.windowScene = winScene
         window?.rootViewController = Menu()
         window?.makeKeyAndVisible()
         window?.overrideUserInterfaceStyle = .light
-        
-        setupPurchases()
-    }
-    
-    private func setupPurchases() {
-        IAPService.shared.setupPurchases { isSuccess in
-            IAPService.shared.fetchProducts()
-        }
-        
-//        Adapty.getPaywalls { paywalls, products, error in
-//            print(paywalls?.count)
-////            print(products?.first?)
-//            print(error)
-//            guard let product = products?.first else { return }
-//            Adapty.makePurchase(product: product) { info, reciept, appleValidationResult, product, error in
-//                print(error)
-//            }
-//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

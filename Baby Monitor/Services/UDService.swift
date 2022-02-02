@@ -24,6 +24,14 @@ class UDService {
         storage.setValue(true, forKey: Constants.isSub)
     }
     
+    func activateSub() {
+        storage.setValue(true, forKey: Constants.isSub)
+    }
+    
+    func deactivateSub() {
+        storage.setValue(false, forKey: Constants.isSub)
+    }
+    
     func isSub() -> Bool {
         (storage.value(forKey: Constants.isSub) as? Bool) ?? false
     }

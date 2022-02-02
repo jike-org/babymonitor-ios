@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Adapty.activate("public_live_MuA60QTg.dgXFgcoy5flPEqcUqXf3")
+        Adapty.logLevel = .errors
+        
         return true
     }
 
