@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             window = UIWindow(frame: winScene.coordinateSpace.bounds)
             window?.windowScene = winScene
-            window?.rootViewController = PaymentViewController()
+            window?.rootViewController = PaymentAssembly().assemble()
             window?.makeKeyAndVisible()
             window?.overrideUserInterfaceStyle = .light
         }

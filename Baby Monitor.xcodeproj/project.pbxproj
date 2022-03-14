@@ -94,6 +94,10 @@
 		E16C018B277D972E00B5F75D /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C018A277D972E00B5F75D /* IAPService.swift */; };
 		E1849070276F672600530B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184906F276F672600530B57 /* Constants.swift */; };
 		E18490732770736E00530B57 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = E18490722770736E00530B57 /* AgoraRtcKit */; };
+		E18DCCEF27DF3CCE00CF429B /* ParentUnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18DCCEE27DF3CCE00CF429B /* ParentUnitViewModel.swift */; };
+		E18DCCF127DF3F0D00CF429B /* ParentUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18DCCF027DF3F0D00CF429B /* ParentUnitViewController.swift */; };
+		E18DCCF327DF3F1700CF429B /* ParentUnitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18DCCF227DF3F1700CF429B /* ParentUnitViewController.storyboard */; };
+		E18DCCF527DF45CF00CF429B /* ParentUnitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18DCCF427DF45CF00CF429B /* ParentUnitRouter.swift */; };
 		E1AA3D24277608B00053338B /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA3D23277608B00053338B /* Commands.swift */; };
 		E1B764C127C245DA000CA558 /* BabyUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C027C245DA000CA558 /* BabyUnitViewController.swift */; };
 		E1B764C327C245F4000CA558 /* BabyUnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C227C245F4000CA558 /* BabyUnitViewModel.swift */; };
@@ -190,6 +194,10 @@
 		E16C0188277D96E600B5F75D /* IAPProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProducts.swift; sourceTree = "<group>"; };
 		E16C018A277D972E00B5F75D /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		E184906F276F672600530B57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E18DCCEE27DF3CCE00CF429B /* ParentUnitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentUnitViewModel.swift; sourceTree = "<group>"; };
+		E18DCCF027DF3F0D00CF429B /* ParentUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentUnitViewController.swift; sourceTree = "<group>"; };
+		E18DCCF227DF3F1700CF429B /* ParentUnitViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParentUnitViewController.storyboard; sourceTree = "<group>"; };
+		E18DCCF427DF45CF00CF429B /* ParentUnitRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentUnitRouter.swift; sourceTree = "<group>"; };
 		E1AA3D23277608B00053338B /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		E1B764C027C245DA000CA558 /* BabyUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUnitViewController.swift; sourceTree = "<group>"; };
 		E1B764C227C245F4000CA558 /* BabyUnitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUnitViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +255,7 @@
 		E106FC57275A161700022C11 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E18DCCED27DF3CBA00CF429B /* ParentUnit */,
 				E1B764BF27C245CA000CA558 /* BabyUnit */,
 				E16C0174277B565000B5F75D /* AudioPlayer */,
 				E133475827675F1400ACE00C /* Legals */,
@@ -534,6 +543,17 @@
 			path = Purchases;
 			sourceTree = "<group>";
 		};
+		E18DCCED27DF3CBA00CF429B /* ParentUnit */ = {
+			isa = PBXGroup;
+			children = (
+				E18DCCEE27DF3CCE00CF429B /* ParentUnitViewModel.swift */,
+				E18DCCF027DF3F0D00CF429B /* ParentUnitViewController.swift */,
+				E18DCCF227DF3F1700CF429B /* ParentUnitViewController.storyboard */,
+				E18DCCF427DF45CF00CF429B /* ParentUnitRouter.swift */,
+			);
+			path = ParentUnit;
+			sourceTree = "<group>";
+		};
 		E1B764BF27C245CA000CA558 /* BabyUnit */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +636,7 @@
 				E13347492767440A00ACE00C /* AdviceViewController.storyboard in Resources */,
 				E16C0180277B566100B5F75D /* AudioPlayerViewController.storyboard in Resources */,
 				E13347512767449B00ACE00C /* PaymentFooterCell.xib in Resources */,
+				E18DCCF327DF3F1700CF429B /* ParentUnitViewController.storyboard in Resources */,
 				E106FCB7275A87A100022C11 /* PaymentCell.xib in Resources */,
 				E106FC4D275A160B00022C11 /* Assets.xcassets in Resources */,
 				E1B764C527C24643000CA558 /* BabyUnitViewController.storyboard in Resources */,
@@ -676,6 +697,7 @@
 				E106FC75275A1CD300022C11 /* PurpleBtn.swift in Sources */,
 				E16C0182277B566100B5F75D /* AudioPlayerViewController.swift in Sources */,
 				E1B764C727C246C9000CA558 /* Box.swift in Sources */,
+				E18DCCF527DF45CF00CF429B /* ParentUnitRouter.swift in Sources */,
 				E1849070276F672600530B57 /* Constants.swift in Sources */,
 				E133475D27675F7900ACE00C /* Constraint.swift in Sources */,
 				E106FC69275A175B00022C11 /* StartViewController.swift in Sources */,
@@ -696,9 +718,11 @@
 				E16C0181277B566100B5F75D /* AudioPlayerModels.swift in Sources */,
 				E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */,
 				E1B764C127C245DA000CA558 /* BabyUnitViewController.swift in Sources */,
+				E18DCCF127DF3F0D00CF429B /* ParentUnitViewController.swift in Sources */,
 				E106FCAB275A867500022C11 /* PaymentModels.swift in Sources */,
 				E106FC80275A26BB00022C11 /* PlayerRouter.swift in Sources */,
 				E13347382767426300ACE00C /* Menu.swift in Sources */,
+				E18DCCEF27DF3CCE00CF429B /* ParentUnitViewModel.swift in Sources */,
 				E1501FD027948946004E3A3B /* API.swift in Sources */,
 				E1B764C327C245F4000CA558 /* BabyUnitViewModel.swift in Sources */,
 				E106FCA8275A867500022C11 /* PaymentPresenter.swift in Sources */,
@@ -848,7 +872,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -856,7 +880,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -872,7 +896,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -880,7 +904,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;

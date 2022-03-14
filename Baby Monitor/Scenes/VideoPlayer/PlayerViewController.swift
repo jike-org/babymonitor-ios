@@ -260,12 +260,9 @@ extension PlayerViewController: AgoraRtcEngineDelegate {
         let myType = string.toCommandsEnum()!
         
         switch myType {
-        case .setVideoDisable(value: let _):
-            videoBtn.isSelected.toggle()
+        case .setVideoDisable(_): videoBtn.isSelected = false
         default: break
         }
     }
-    
-    
     
 }

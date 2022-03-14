@@ -119,48 +119,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF51A1DC-CBE0-48C5-8A88-586C235D9486"
+            uuid = "0A70CD09-712D-4F43-B18A-8B2F43B1F600"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Baby Monitor/Scenes/BabyUnit/BabyUnitViewController.swift"
+            filePath = "Baby Monitor/Scenes/Payment/PaymentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "bindViewModel()"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "displayData(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3362E453-05D0-4E03-9446-CDECFC65816A"
+            uuid = "700082F6-C84D-4418-8BD4-CE0DADE27C8D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Baby Monitor/Scenes/BabyUnit/BabyUnitViewController.swift"
+            filePath = "Baby Monitor/Scenes/Payment/PaymentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "bindViewModel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D0092A81-FB0F-41AC-95CB-805404F70F2A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Baby Monitor/Scenes/BabyUnit/BabyUnitViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
-            landmarkName = "rtcEngine(_:receiveStreamMessageFromUid:streamId:data:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

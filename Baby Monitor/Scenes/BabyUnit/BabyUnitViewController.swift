@@ -77,6 +77,7 @@ class BabyUnitViewController: UIViewController {
     }
     
     @IBAction private func flipCamera() {
+        agoraKit?.switchCamera()
         viewModel?.switchCamera()
     }
     
@@ -119,15 +120,6 @@ extension BabyUnitViewController {
             isPlaying ? stop : resume
         }
         
-        viewModel?.currentCamera.bind { camera in
-            self.agoraKit?.switchCamera()
-            
-            switch camera {
-            case .front: break
-            case .main: break
-            }
-        }
-        
         viewModel?.createToken(completion: { token, channelID in
             self.showInviteAlert(channelID: channelID)
             self.agoraKit?.joinChannel(byToken: token,
@@ -146,7 +138,8 @@ extension BabyUnitViewController {
         viewModel?.isSleep.bind(listener: { isSleep in
             guard isSleep else { return }
             self.saveBatteryStackView.isHidden = false
-            self.remoteView.isHidden = false
+            self.remoteView.isHidden = true
+            
             let value = Commands.setVideoDisable(value: true).description
             let data = Data(value.utf8)
             self.agoraKit?.sendStreamMessage(1, data: data)
@@ -219,9 +212,7 @@ extension BabyUnitViewController: AgoraRtcEngineDelegate {
             }
         case .setVideoDisable(value: let value):
             viewModel?.isVideoEnabled.value = value
-            if value {
-                viewModel?.startSleepTimer()
-            }
+            viewModel?.startSleepTimer()
         default: break
         }
     }

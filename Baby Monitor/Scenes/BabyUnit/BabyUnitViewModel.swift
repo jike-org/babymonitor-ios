@@ -61,13 +61,12 @@ class BabyUnitViewModel: NSObject, BabyUnitViewModelType {
     var isSleep: Box<Bool> = .init(false)
     var channelID: Int = 0
     
-//    private var audioEffectsIDs: [Int32] = [0]
-//    private var audioEffectsPaths: [String] = []
     private var audioEffects: [Int32: String] = [:]
     private var repo: UsersRepoProtocol?
     private let currentUserID: UInt = 1
     private let isSub = UDService.shared.isSub()
     private var secondsToSleep = 30
+    private var timer: Timer?
     
     override init() {
         super.init()
@@ -166,20 +165,28 @@ class BabyUnitViewModel: NSObject, BabyUnitViewModelType {
         currentTrack.value = (trackID, audioEffects[trackID]!)
     }
     
+    private func dropTimer() {
+        timer?.invalidate()
+        timer = nil
+        secondsToSleep = 30
+    }
+    
     func startSleepTimer() {
-        let timer = Timer(timeInterval: 1, repeats: true) { [weak self] timer in
+        dropTimer()
+        
+        timer = Timer(timeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             
             if self.secondsToSleep <= 0 {
-                timer.invalidate()
+                self.dropTimer()
                 self.isSleep.value = true
-                self.secondsToSleep = 30
                 return
             }
 
             self.secondsToSleep -= 1
         }
         
+        guard let timer = timer else { return }
         RunLoop.main.add(timer, forMode: .common)
         
         timer.fire()
