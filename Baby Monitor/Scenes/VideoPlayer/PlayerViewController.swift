@@ -26,6 +26,7 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     private var currentTrackID: Int = 0
     private var channelID: String?
     private let userID: UInt = 2
+    private let isSub = UDService.shared.isSub()
     
     @IBOutlet private weak var brightnessBtn: UIButton!
     @IBOutlet private weak var videoBtn: UIButton!
@@ -60,9 +61,9 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
         
         remoteView.frame = view.bounds
         
-        showJoinAlert { channelID in
-            self.channelID = channelID
-            self.interactor?.makeRequest(request: .generateToken(channelID: "\(channelID)", role: .subscriber))
+        showJoinAlert { [weak self] channelID in
+            self?.channelID = channelID
+            self?.interactor?.makeRequest(request: .generateToken(channelID: "\(channelID)", role: .subscriber))
         }
         
         agoraKit?.enableAudio()
@@ -87,9 +88,11 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
             agoraKit?.leaveChannel(nil)
             AgoraRtcEngineKit.destroy()
             
-            showAlert(with: "On free plan there`re available 15 free minutes viedo stream. Subscrinbe to use app without limits") {
-                self.router?.navigateToSubscribeScreen()
+            showAlert(with: "On free plan there`re available 15 free minutes viedo stream. Subscrinbe to use app without limits") { [weak self] in
+                self?.router?.navigateToSubscribeScreen()
             }
+            
+            UDService.shared.disableTrial()
         case .saveToken(token: let token):
             self.token = token
             self.joinAgoraChannel(channelID: channelID)
@@ -180,6 +183,10 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     }
     
     @IBAction private func playPreviousTrack() {
+        guard isSub else {
+            onlyOneTrackAlert()
+            return
+        }
         let value = Commands.previousTrack.description
         let data = Data(value.utf8)
         agoraKit?.sendStreamMessage(1, data: data)
@@ -194,6 +201,10 @@ class PlayerViewController: UIViewController, PlayerDisplayLogic {
     }
     
     @IBAction private func playNextTrack() {
+        guard isSub else {
+            onlyOneTrackAlert()
+            return
+        }
         let value = Commands.nextTrack.description
         let data = Data(value.utf8)
         agoraKit?.sendStreamMessage(1, data: data)
@@ -241,6 +252,18 @@ extension PlayerViewController: AgoraRtcEngineDelegate {
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didLeaveChannelWith stats: AgoraChannelStats) {
         UIApplication.shared.isIdleTimerDisabled = false
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, receiveStreamMessageFromUid uid: UInt, streamId: Int, data: Data) {
+        guard let string = String(data: data, encoding: .utf8) else { return }
+        
+        let myType = string.toCommandsEnum()!
+        
+        switch myType {
+        case .setVideoDisable(value: let _):
+            videoBtn.isSelected.toggle()
+        default: break
+        }
     }
     
     

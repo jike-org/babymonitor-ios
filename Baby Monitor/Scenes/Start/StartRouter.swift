@@ -33,11 +33,10 @@ class StartRouter: NSObject, StartRoutingLogic {
     }
     
     func navigateToBabyScene() {
-        let storyboard = UIStoryboard(name: "StreamViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "StreamViewController") { coder in
-            let assembly = StreamAssembly()
-            return assembly.assemble(coder: coder)
-        } as! StreamViewController
+        let storyboard = UIStoryboard(name: "BabyUnitViewController", bundle: nil)
+        guard
+            let vc = storyboard.instantiateViewController(identifier: "BabyUnitViewController") as? BabyUnitViewController
+        else { return }
         vc.modalPresentationStyle = .fullScreen
         viewController?.present(vc, animated: true, completion: nil)
     }

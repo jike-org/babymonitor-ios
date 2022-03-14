@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Baby Unit View Controller-->
+        <scene sceneID="ZDP-dL-mwf">
+            <objects>
+                <viewController storyboardIdentifier="BabyUnitViewController" id="w8o-mn-C5x" customClass="BabyUnitViewController" customModule="Baby_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YgX-W0-taM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvs-Yr-qH7">
+                                <rect key="frame" x="58" y="652" width="80" height="80"/>
+                                <state key="normal" image="FlipCameraButton"/>
+                                <connections>
+                                    <action selector="flipCamera" destination="w8o-mn-C5x" eventType="touchUpInside" id="MJU-m6-GcT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woG-Ja-65o">
+                                <rect key="frame" x="276" y="652" width="80" height="80"/>
+                                <state key="normal" image="ClosedCameraButton"/>
+                                <connections>
+                                    <action selector="dismissScene" destination="w8o-mn-C5x" eventType="touchUpInside" id="QUQ-YN-YkZ"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cqm-LI-Ksn">
+                                <rect key="frame" x="197" y="133.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waitinf for parent unit connection..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTo-AY-YSk">
+                                <rect key="frame" x="79.5" y="94" width="255.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sxO-mX-gWp">
+                                <rect key="frame" x="102" y="173.5" width="210" height="335"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dino" translatesAutoresizingMaskIntoConstraints="NO" id="EKR-8T-pUq">
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="234"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62j-9y-iVs">
+                                        <rect key="frame" x="0.0" y="249" width="210" height="86"/>
+                                        <string key="text">Baby sleeping
+Switching off camera
+saves battery life on
+Baby device</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTz-5y-HgP" customClass="PurpleBtn" customModule="Baby_Monitor" customModuleProvider="target">
+                                <rect key="frame" x="122" y="797" width="170" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="05V-aM-OwV"/>
+                                    <constraint firstAttribute="height" constant="50" id="Rch-ag-aAc"/>
+                                </constraints>
+                                <state key="normal" title="Connection info"/>
+                                <connections>
+                                    <action selector="showConnectionInfo" destination="w8o-mn-C5x" eventType="touchUpInside" id="ULF-eA-rdM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rTq-ib-ipM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rTq-ib-ipM" firstAttribute="bottom" secondItem="Nvs-Yr-qH7" secondAttribute="bottom" constant="130" id="EfC-97-dS5"/>
+                            <constraint firstItem="Nvs-Yr-qH7" firstAttribute="leading" secondItem="rTq-ib-ipM" secondAttribute="leading" constant="58" id="Iie-CZ-xY0"/>
+                            <constraint firstItem="rTq-ib-ipM" firstAttribute="bottom" secondItem="VTz-5y-HgP" secondAttribute="bottom" constant="15" id="Jrh-m4-2TB"/>
+                            <constraint firstItem="rTq-ib-ipM" firstAttribute="trailing" secondItem="woG-Ja-65o" secondAttribute="trailing" constant="58" id="TLL-U5-jRh"/>
+                            <constraint firstItem="Cqm-LI-Ksn" firstAttribute="centerX" secondItem="YgX-W0-taM" secondAttribute="centerX" id="YzP-jE-Jtp"/>
+                            <constraint firstItem="sxO-mX-gWp" firstAttribute="top" secondItem="Cqm-LI-Ksn" secondAttribute="bottom" constant="20" id="c1a-Ok-go5"/>
+                            <constraint firstItem="nTo-AY-YSk" firstAttribute="top" secondItem="rTq-ib-ipM" secondAttribute="top" constant="50" id="hUY-TZ-wmB"/>
+                            <constraint firstItem="sxO-mX-gWp" firstAttribute="centerX" secondItem="YgX-W0-taM" secondAttribute="centerX" id="hem-M2-GTv"/>
+                            <constraint firstItem="Cqm-LI-Ksn" firstAttribute="top" secondItem="nTo-AY-YSk" secondAttribute="bottom" constant="20" id="phz-2A-42b"/>
+                            <constraint firstItem="VTz-5y-HgP" firstAttribute="centerX" secondItem="YgX-W0-taM" secondAttribute="centerX" id="t4P-QG-318"/>
+                            <constraint firstItem="rTq-ib-ipM" firstAttribute="bottom" secondItem="woG-Ja-65o" secondAttribute="bottom" constant="130" id="tZK-ZG-yZJ"/>
+                            <constraint firstItem="nTo-AY-YSk" firstAttribute="centerX" secondItem="YgX-W0-taM" secondAttribute="centerX" id="xrN-4V-fdK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Cqm-LI-Ksn" id="I2U-gF-2PV"/>
+                        <outlet property="infoLabel" destination="nTo-AY-YSk" id="vbN-hG-ivD"/>
+                        <outlet property="saveBatteryStackView" destination="sxO-mX-gWp" id="q5Y-O6-ahD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVs-Mj-WZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="72.991071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ClosedCameraButton" width="80" height="80"/>
+        <image name="FlipCameraButton" width="80" height="80"/>
+        <image name="dino" width="210" height="234"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

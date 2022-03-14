@@ -66,27 +66,6 @@ class PaymentPresenter: PaymentPresentationLogic {
     
     private func startTimer(durationInSeconds: Int) {
         var count = durationInSeconds
-//        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-//            guard
-//                count >= 0,
-//                let self = self
-//            else {
-//                timer.invalidate()
-//                return
-//            }
-//            var times: [String] = []
-//            let seconds = (count % 3600) % 60
-//            let minutes = count / 60 % 60
-//            let hours = count / 3600
-//            times.append("\(hours)")
-//            times.append("\(minutes)")
-//            times.append("\(seconds)")
-//            count -= 1
-//            let time = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-//            self.viewController?.displayData(viewModel: .displayTimer(time: time))
-//        }
-//        timer.fire()
-        
         
         let timer1 = Timer(timeInterval: 1, repeats: true) { [weak self] timer in
             guard
@@ -111,10 +90,6 @@ class PaymentPresenter: PaymentPresentationLogic {
         RunLoop.main.add(timer1, forMode: .common)
         
         timer1.fire()
-    }
-    
-    private func timerCompletion() {
-        
     }
     
 }

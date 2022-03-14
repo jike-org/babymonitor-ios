@@ -26,11 +26,11 @@
 		<string>_service._udp</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>Need camera</string>
+	<string>Allow camera access in order to see live video of your baby.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Need usage </string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Need microphone</string>
+	<string>Allow microphone access in order to hear your baby.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

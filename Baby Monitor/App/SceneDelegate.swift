@@ -23,11 +23,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            let assembly = StartAssembly()
 //            return assembly.assemble(coder: coder)
 //        }
-        window = UIWindow(frame: winScene.coordinateSpace.bounds)
-        window?.windowScene = winScene
-        window?.rootViewController = Menu()
-        window?.makeKeyAndVisible()
-        window?.overrideUserInterfaceStyle = .light
+        
+        if UDService.shared.isTrialActive() {
+            window = UIWindow(frame: winScene.coordinateSpace.bounds)
+            window?.windowScene = winScene
+            window?.rootViewController = Menu()
+            window?.makeKeyAndVisible()
+            window?.overrideUserInterfaceStyle = .light
+        } else {
+            window = UIWindow(frame: winScene.coordinateSpace.bounds)
+            window?.windowScene = winScene
+            window?.rootViewController = PaymentViewController()
+            window?.makeKeyAndVisible()
+            window?.overrideUserInterfaceStyle = .light
+        }
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

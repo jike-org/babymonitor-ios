@@ -42,5 +42,12 @@ class UDService {
         storage.removeObject(forKey: Constants.freeTimeUsage)
     }
     
+    func isTrialActive() -> Bool {
+        (storage.value(forKey: Constants.freeTimeUsage) as? Bool) ?? true
+    }
+    
+    func disableTrial() {
+        storage.setValue(false, forKey: Constants.freeTimeUsage)
+    }
     
 }

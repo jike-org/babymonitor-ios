@@ -20,11 +20,9 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
     
     private var agoraKit: AgoraRtcEngineKit?
     private let channelID = Int.random(in: 120000..<999999)
-//    private let channelID = 7899
     private var remoteView: UIView!
     private var audioEffectsIDs: [Int32] = [0, 1, 2, 3, 4, 5, 6]
     private var audioEffectsFilePaths: [String] = []
-//    private var audioEffectsFileIDs: [Int32] = []
     private var currentEffectID: Int32 = 0
     private var isStarted = false
     private var token: String?
@@ -103,6 +101,14 @@ class StreamViewController: UIViewController, StreamDisplayLogic {
             showInviteAlert(channelID: channelID)
         case .showAlert(message: let message):
             showErrorAlert(with: message)
+        case .sleep:
+            saveBatteryStackView.isHidden = false
+            remoteView.isHidden = true
+//            agoraKit?.stopPreview()
+            
+            let value = Commands.setVideoDisable(value: true).description
+            let data = Data(value.utf8)
+            agoraKit?.sendStreamMessage(1, data: data)
         }
     }
     
@@ -181,6 +187,8 @@ extension StreamViewController: AgoraRtcEngineDelegate {
         
         agoraKit?.setupRemoteVideo(remoteCanvas)
         UIApplication.shared.isIdleTimerDisabled = true
+        
+        interactor?.makeRequest(request: .connected)
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {

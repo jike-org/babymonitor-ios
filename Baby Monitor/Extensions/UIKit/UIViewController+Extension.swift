@@ -56,5 +56,13 @@ extension UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
+    func onlyOneTrackAlert() {
+        let ac = UIAlertController(title: "Only one track", message: "One free plan available only one track to play. Buy premium subscription to remove limits.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+        ac.addAction(okAction)
+        
+        present(ac, animated: true, completion: nil)
+    }
+    
     
 }

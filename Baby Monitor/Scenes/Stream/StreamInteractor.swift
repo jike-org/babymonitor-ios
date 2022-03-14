@@ -28,6 +28,8 @@ class StreamInteractor: StreamBusinessLogic {
                 guard let self = self else { return }
                 self.presenter?.presentData(response: .presentTokenGeneration(result: result))
             })
+        case .connected:
+            presenter?.presentData(response: .presentConnected)
         }
     }
     

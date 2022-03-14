@@ -95,6 +95,11 @@
 		E1849070276F672600530B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184906F276F672600530B57 /* Constants.swift */; };
 		E18490732770736E00530B57 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = E18490722770736E00530B57 /* AgoraRtcKit */; };
 		E1AA3D24277608B00053338B /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA3D23277608B00053338B /* Commands.swift */; };
+		E1B764C127C245DA000CA558 /* BabyUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C027C245DA000CA558 /* BabyUnitViewController.swift */; };
+		E1B764C327C245F4000CA558 /* BabyUnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C227C245F4000CA558 /* BabyUnitViewModel.swift */; };
+		E1B764C527C24643000CA558 /* BabyUnitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B764C427C24643000CA558 /* BabyUnitViewController.storyboard */; };
+		E1B764C727C246C9000CA558 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C627C246C9000CA558 /* Box.swift */; };
+		E1B764C927C28494000CA558 /* AVCaptureDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C827C28494000CA558 /* AVCaptureDevice+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +191,11 @@
 		E16C018A277D972E00B5F75D /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		E184906F276F672600530B57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1AA3D23277608B00053338B /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
+		E1B764C027C245DA000CA558 /* BabyUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUnitViewController.swift; sourceTree = "<group>"; };
+		E1B764C227C245F4000CA558 /* BabyUnitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUnitViewModel.swift; sourceTree = "<group>"; };
+		E1B764C427C24643000CA558 /* BabyUnitViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BabyUnitViewController.storyboard; sourceTree = "<group>"; };
+		E1B764C627C246C9000CA558 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		E1B764C827C28494000CA558 /* AVCaptureDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +247,7 @@
 		E106FC57275A161700022C11 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E1B764BF27C245CA000CA558 /* BabyUnit */,
 				E16C0174277B565000B5F75D /* AudioPlayer */,
 				E133475827675F1400ACE00C /* Legals */,
 				E1334739276743E800ACE00C /* Advice */,
@@ -254,6 +265,7 @@
 			children = (
 				E106FC73275A1CC100022C11 /* Components */,
 				E106FC70275A18EA00022C11 /* UIKit */,
+				E1B764C827C28494000CA558 /* AVCaptureDevice+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,6 +464,7 @@
 			children = (
 				E133475C27675F7900ACE00C /* Constraint.swift */,
 				E1AA3D23277608B00053338B /* Commands.swift */,
+				E1B764C627C246C9000CA558 /* Box.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -519,6 +532,16 @@
 				E16C018A277D972E00B5F75D /* IAPService.swift */,
 			);
 			path = Purchases;
+			sourceTree = "<group>";
+		};
+		E1B764BF27C245CA000CA558 /* BabyUnit */ = {
+			isa = PBXGroup;
+			children = (
+				E1B764C027C245DA000CA558 /* BabyUnitViewController.swift */,
+				E1B764C227C245F4000CA558 /* BabyUnitViewModel.swift */,
+				E1B764C427C24643000CA558 /* BabyUnitViewController.storyboard */,
+			);
+			path = BabyUnit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +618,7 @@
 				E13347512767449B00ACE00C /* PaymentFooterCell.xib in Resources */,
 				E106FCB7275A87A100022C11 /* PaymentCell.xib in Resources */,
 				E106FC4D275A160B00022C11 /* Assets.xcassets in Resources */,
+				E1B764C527C24643000CA558 /* BabyUnitViewController.storyboard in Resources */,
 				E106FC86275A26C900022C11 /* PlayerViewController.storyboard in Resources */,
 				E16C0161277866D600B5F75D /* Drops.mp3 in Resources */,
 				E106FC99275A751D00022C11 /* StreamViewController.storyboard in Resources */,
@@ -647,9 +671,11 @@
 				E1334742276743FC00ACE00C /* AdviceWorker.swift in Sources */,
 				E106FC6F275A178800022C11 /* StartAssembly.swift in Sources */,
 				E106FCB2275A86CA00022C11 /* PaymentAssembly.swift in Sources */,
+				E1B764C927C28494000CA558 /* AVCaptureDevice+Extension.swift in Sources */,
 				E1334744276743FC00ACE00C /* AdviceModels.swift in Sources */,
 				E106FC75275A1CD300022C11 /* PurpleBtn.swift in Sources */,
 				E16C0182277B566100B5F75D /* AudioPlayerViewController.swift in Sources */,
+				E1B764C727C246C9000CA558 /* Box.swift in Sources */,
 				E1849070276F672600530B57 /* Constants.swift in Sources */,
 				E133475D27675F7900ACE00C /* Constraint.swift in Sources */,
 				E106FC69275A175B00022C11 /* StartViewController.swift in Sources */,
@@ -669,10 +695,12 @@
 				E106FCA9275A867500022C11 /* PaymentWorker.swift in Sources */,
 				E16C0181277B566100B5F75D /* AudioPlayerModels.swift in Sources */,
 				E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */,
+				E1B764C127C245DA000CA558 /* BabyUnitViewController.swift in Sources */,
 				E106FCAB275A867500022C11 /* PaymentModels.swift in Sources */,
 				E106FC80275A26BB00022C11 /* PlayerRouter.swift in Sources */,
 				E13347382767426300ACE00C /* Menu.swift in Sources */,
 				E1501FD027948946004E3A3B /* API.swift in Sources */,
+				E1B764C327C245F4000CA558 /* BabyUnitViewModel.swift in Sources */,
 				E106FCA8275A867500022C11 /* PaymentPresenter.swift in Sources */,
 				E1AA3D24277608B00053338B /* Commands.swift in Sources */,
 				E16C0183277B566100B5F75D /* AudioPlayerAssembly.swift in Sources */,
@@ -820,7 +848,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -828,7 +856,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -844,7 +872,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Baby Monitor/Baby Monitor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HN94Y3AY2Q;
 				INFOPLIST_FILE = "Baby Monitor/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -852,7 +880,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
