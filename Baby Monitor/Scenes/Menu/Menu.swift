@@ -7,6 +7,7 @@
 
 import UIKit
 import Adapty
+import SwiftUI
 
 class Menu: UITabBarController {
     
@@ -90,19 +91,11 @@ class Menu: UITabBarController {
         return vc
     }
     
-    private func createSubscribtionScreen() -> PaymentViewController {
-//        let storyboard = UIStoryboard(name: "PaymentViewcontroller", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "PaymentViewController") { coder in
-//            let assembly = PaymentAssembly()
-//            return assembly.assemble(coder: coder)
-//        } as! PaymentViewController
-        
-        let assembly = PaymentAssembly()
-        let vc = assembly.assemble()
-        
+    private func createSubscribtionScreen() -> UIViewController {
+        let hosting = UIHostingController(rootView: PaymentNewScreen(shouldShowCloseBtn: false))
         let item = UITabBarItem(title: "Subscribe", image: #imageLiteral(resourceName: "paymentIcon"), tag: 0)
-        vc.tabBarItem = item
-        return vc
+        hosting.tabBarItem = item
+        return hosting
     }
     
 }

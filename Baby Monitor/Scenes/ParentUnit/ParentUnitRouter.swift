@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol ParentUnitRoutingLogic {
     func navigateToSubscribeScreen()
@@ -18,9 +19,9 @@ class ParentUnitRouter: NSObject, ParentUnitRoutingLogic {
     // MARK: Routing
     
     func navigateToSubscribeScreen() {
-        let assembly = PaymentAssembly()
-        let vc = assembly.assemble()
+        let vc = UIHostingController(rootView: PaymentNewScreen(shouldShowCloseBtn: true))
         vc.modalPresentationStyle = .fullScreen
         viewController?.present(vc, animated: true, completion: nil)
     }
+    
 }

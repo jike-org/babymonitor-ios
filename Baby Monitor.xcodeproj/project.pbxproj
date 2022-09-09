@@ -69,6 +69,10 @@
 		E133475727675A5E00ACE00C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475627675A5E00ACE00C /* CustomSlider.swift */; };
 		E133475A27675F2D00ACE00C /* LegalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475927675F2D00ACE00C /* LegalsViewController.swift */; };
 		E133475D27675F7900ACE00C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133475C27675F7900ACE00C /* Constraint.swift */; };
+		E1415E1228BF3FF5001DD6C7 /* PaymentNewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1415E1128BF3FF5001DD6C7 /* PaymentNewScreen.swift */; };
+		E1415E1428BF4001001DD6C7 /* PaymentNewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1415E1328BF4001001DD6C7 /* PaymentNewVM.swift */; };
+		E1415E1628BF467B001DD6C7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1415E1528BF467B001DD6C7 /* Colors.swift */; };
+		E1415E1828BF4841001DD6C7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1415E1728BF4841001DD6C7 /* Images.swift */; };
 		E1501FD027948946004E3A3B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FCF27948946004E3A3B /* API.swift */; };
 		E1501FD2279489A2004E3A3B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FD1279489A2004E3A3B /* Networking.swift */; };
 		E1501FD527948A0D004E3A3B /* UsersRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1501FD427948A0D004E3A3B /* UsersRepo.swift */; };
@@ -98,6 +102,11 @@
 		E18DCCF127DF3F0D00CF429B /* ParentUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18DCCF027DF3F0D00CF429B /* ParentUnitViewController.swift */; };
 		E18DCCF327DF3F1700CF429B /* ParentUnitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18DCCF227DF3F1700CF429B /* ParentUnitViewController.storyboard */; };
 		E18DCCF527DF45CF00CF429B /* ParentUnitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18DCCF427DF45CF00CF429B /* ParentUnitRouter.swift */; };
+		E1A4423028CB6AB1007AC4A5 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4422F28CB6AB1007AC4A5 /* Reviews.swift */; };
+		E1A4423228CB7058007AC4A5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4423128CB7058007AC4A5 /* Strings.swift */; };
+		E1A4423428CB84CB007AC4A5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4423328CB84CB007AC4A5 /* RoundedCorner.swift */; };
+		E1A4423628CB92D0007AC4A5 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4423528CB92D0007AC4A5 /* Loader.swift */; };
+		E1A4423828CB97AF007AC4A5 /* SKProduct+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4423728CB97AF007AC4A5 /* SKProduct+Extension.swift */; };
 		E1AA3D24277608B00053338B /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA3D23277608B00053338B /* Commands.swift */; };
 		E1B764C127C245DA000CA558 /* BabyUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C027C245DA000CA558 /* BabyUnitViewController.swift */; };
 		E1B764C327C245F4000CA558 /* BabyUnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B764C227C245F4000CA558 /* BabyUnitViewModel.swift */; };
@@ -170,6 +179,10 @@
 		E133475627675A5E00ACE00C /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		E133475927675F2D00ACE00C /* LegalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalsViewController.swift; sourceTree = "<group>"; };
 		E133475C27675F7900ACE00C /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		E1415E1128BF3FF5001DD6C7 /* PaymentNewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentNewScreen.swift; sourceTree = "<group>"; };
+		E1415E1328BF4001001DD6C7 /* PaymentNewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentNewVM.swift; sourceTree = "<group>"; };
+		E1415E1528BF467B001DD6C7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E1415E1728BF4841001DD6C7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		E1501FCF27948946004E3A3B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E1501FD1279489A2004E3A3B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E1501FD427948A0D004E3A3B /* UsersRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepo.swift; sourceTree = "<group>"; };
@@ -198,6 +211,11 @@
 		E18DCCF027DF3F0D00CF429B /* ParentUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentUnitViewController.swift; sourceTree = "<group>"; };
 		E18DCCF227DF3F1700CF429B /* ParentUnitViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParentUnitViewController.storyboard; sourceTree = "<group>"; };
 		E18DCCF427DF45CF00CF429B /* ParentUnitRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentUnitRouter.swift; sourceTree = "<group>"; };
+		E1A4422F28CB6AB1007AC4A5 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		E1A4423128CB7058007AC4A5 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		E1A4423328CB84CB007AC4A5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		E1A4423528CB92D0007AC4A5 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		E1A4423728CB97AF007AC4A5 /* SKProduct+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct+Extension.swift"; sourceTree = "<group>"; };
 		E1AA3D23277608B00053338B /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		E1B764C027C245DA000CA558 /* BabyUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUnitViewController.swift; sourceTree = "<group>"; };
 		E1B764C227C245F4000CA558 /* BabyUnitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUnitViewModel.swift; sourceTree = "<group>"; };
@@ -255,6 +273,7 @@
 		E106FC57275A161700022C11 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E1415E1028BF3FDD001DD6C7 /* PaymentNew */,
 				E18DCCED27DF3CBA00CF429B /* ParentUnit */,
 				E1B764BF27C245CA000CA558 /* BabyUnit */,
 				E16C0174277B565000B5F75D /* AudioPlayer */,
@@ -275,6 +294,8 @@
 				E106FC73275A1CC100022C11 /* Components */,
 				E106FC70275A18EA00022C11 /* UIKit */,
 				E1B764C827C28494000CA558 /* AVCaptureDevice+Extension.swift */,
+				E1A4423328CB84CB007AC4A5 /* RoundedCorner.swift */,
+				E1A4423728CB97AF007AC4A5 /* SKProduct+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +329,10 @@
 			children = (
 				E16C0159277865AF00B5F75D /* Audio */,
 				E106FC4C275A160B00022C11 /* Assets.xcassets */,
+				E1415E1528BF467B001DD6C7 /* Colors.swift */,
+				E1415E1728BF4841001DD6C7 /* Images.swift */,
+				E1A4422F28CB6AB1007AC4A5 /* Reviews.swift */,
+				E1A4423128CB7058007AC4A5 /* Strings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -349,6 +374,7 @@
 			children = (
 				E106FC74275A1CD300022C11 /* PurpleBtn.swift */,
 				E133475627675A5E00ACE00C /* CustomSlider.swift */,
+				E1A4423528CB92D0007AC4A5 /* Loader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -476,6 +502,15 @@
 				E1B764C627C246C9000CA558 /* Box.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E1415E1028BF3FDD001DD6C7 /* PaymentNew */ = {
+			isa = PBXGroup;
+			children = (
+				E1415E1128BF3FF5001DD6C7 /* PaymentNewScreen.swift */,
+				E1415E1328BF4001001DD6C7 /* PaymentNewVM.swift */,
+			);
+			path = PaymentNew;
 			sourceTree = "<group>";
 		};
 		E1501FCE2794893D004E3A3B /* Network */ = {
@@ -667,12 +702,14 @@
 				E1334745276743FC00ACE00C /* AdviceViewController.swift in Sources */,
 				E104331D278974AE00E29E16 /* AudioPaths.swift in Sources */,
 				E1501FDA27948B7F004E3A3B /* HttpErros.swift in Sources */,
+				E1A4423628CB92D0007AC4A5 /* Loader.swift in Sources */,
 				E106FCAA275A867500022C11 /* PaymentRouter.swift in Sources */,
 				E16C018B277D972E00B5F75D /* IAPService.swift in Sources */,
 				E106FC82275A26BB00022C11 /* PlayerViewController.swift in Sources */,
 				E106FC88275A698300022C11 /* PlayerAssembly.swift in Sources */,
 				E16C017E277B566100B5F75D /* AudioPlayerWorker.swift in Sources */,
 				E106FC7E275A26BB00022C11 /* PlayerPresenter.swift in Sources */,
+				E1415E1828BF4841001DD6C7 /* Images.swift in Sources */,
 				E106FC6A275A175B00022C11 /* StartInteractor.swift in Sources */,
 				E1334743276743FC00ACE00C /* AdviceRouter.swift in Sources */,
 				E106FCB6275A87A100022C11 /* PaymentCell.swift in Sources */,
@@ -690,12 +727,15 @@
 				E1334746276743FC00ACE00C /* AdviceInteractor.swift in Sources */,
 				E106FC95275A750D00022C11 /* StreamViewController.swift in Sources */,
 				E1334742276743FC00ACE00C /* AdviceWorker.swift in Sources */,
+				E1A4423828CB97AF007AC4A5 /* SKProduct+Extension.swift in Sources */,
 				E106FC6F275A178800022C11 /* StartAssembly.swift in Sources */,
 				E106FCB2275A86CA00022C11 /* PaymentAssembly.swift in Sources */,
+				E1415E1228BF3FF5001DD6C7 /* PaymentNewScreen.swift in Sources */,
 				E1B764C927C28494000CA558 /* AVCaptureDevice+Extension.swift in Sources */,
 				E1334744276743FC00ACE00C /* AdviceModels.swift in Sources */,
 				E106FC75275A1CD300022C11 /* PurpleBtn.swift in Sources */,
 				E16C0182277B566100B5F75D /* AudioPlayerViewController.swift in Sources */,
+				E1A4423028CB6AB1007AC4A5 /* Reviews.swift in Sources */,
 				E1B764C727C246C9000CA558 /* Box.swift in Sources */,
 				E18DCCF527DF45CF00CF429B /* ParentUnitRouter.swift in Sources */,
 				E1849070276F672600530B57 /* Constants.swift in Sources */,
@@ -710,6 +750,7 @@
 				E13347502767449B00ACE00C /* PaymentFooterCell.swift in Sources */,
 				E106FC46275A160900022C11 /* SceneDelegate.swift in Sources */,
 				E106FC65275A175B00022C11 /* StartPresenter.swift in Sources */,
+				E1A4423228CB7058007AC4A5 /* Strings.swift in Sources */,
 				E106FCAD275A867500022C11 /* PaymentInteractor.swift in Sources */,
 				E106FC72275A18F800022C11 /* UIColor+Extension.swift in Sources */,
 				E1501FD2279489A2004E3A3B /* Networking.swift in Sources */,
@@ -727,6 +768,9 @@
 				E1B764C327C245F4000CA558 /* BabyUnitViewModel.swift in Sources */,
 				E106FCA8275A867500022C11 /* PaymentPresenter.swift in Sources */,
 				E1AA3D24277608B00053338B /* Commands.swift in Sources */,
+				E1A4423428CB84CB007AC4A5 /* RoundedCorner.swift in Sources */,
+				E1415E1628BF467B001DD6C7 /* Colors.swift in Sources */,
+				E1415E1428BF4001001DD6C7 /* PaymentNewVM.swift in Sources */,
 				E16C0183277B566100B5F75D /* AudioPlayerAssembly.swift in Sources */,
 				E106FC91275A750D00022C11 /* StreamPresenter.swift in Sources */,
 				E133475427674CA700ACE00C /* HeaderCell.swift in Sources */,
@@ -880,7 +924,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -904,7 +948,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = stardev.BabyMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
